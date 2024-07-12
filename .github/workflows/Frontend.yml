@@ -1,6 +1,9 @@
 name: Notify Main Project
 
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   notify-main-project:
