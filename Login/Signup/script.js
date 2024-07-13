@@ -65,4 +65,73 @@ function closePopup() {
 
         showPopup('Sign In Form is valid');
     }
+    function sanitizeSignUpForm() {
+        let name = sanitizeInput(document.getElementById('signUpName').value);
+        let email = sanitizeInput(document.getElementById('signUpEmail').value);
+        let password = sanitizeInput(document.getElementById('signUpPassword').value);
+        let confirmPassword = sanitizeInput(document.getElementById('signUpConfirmPassword').value);
+        let phoneNumber = sanitizeInput(document.getElementById('signUpPhoneNumber').value);
+    
+        if (!name) {
+            showPopup('Name cannot be empty');
+            return;
+        }
+    
+        if (!email) {
+            showPopup('Email cannot be empty');
+            return;
+        }
+    
+        if (!validateEmail(email)) {
+            showPopup('Invalid email format');
+            return;
+        }
+    
+        if (!password) {
+            showPopup('Password cannot be empty');
+            return;
+        }
+    
+        if (!validatePassword(password)) {
+            showPopup('Password must be at least 6 characters long');
+            return;
+        }
+    
+        if (password !== confirmPassword) {
+            showPopup('Passwords do not match');
+            return;
+        }
+    
+        if (!phoneNumber) {
+            showPopup('Phone Number cannot be empty');
+            return;
+        }
+    
+        if (!validatePhoneNumber(phoneNumber)) {
+            showPopup('Invalid phone number format');
+            return;
+        }
+    
+        showPopup('Sign Up Form is valid');
+        // You can proceed with form submission or further processing
+    }
+    
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+    
+    function validatePassword(password) {
+        return password.length >= 6;
+    }
+    
+    function validateName(name) {
+        return name.length > 0;
+    }
+    
+    function validatePhoneNumber(phoneNumber) {
+        // Matches a number starting with +961 followed by a space and then 8 digits
+        const re = /^\+961\s\d{8}$/;
+        return re.test(phoneNumber);
+    }
 });
