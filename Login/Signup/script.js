@@ -91,9 +91,10 @@ function sanitizeSignInForm() {
     fetchLoginApi(email,password);
 }
 
+
 async function fetchSignupApi(name,email,password,phoneNumber) {
     try {
-        const res = await fetch("backendAPI", {
+        const res = await fetch("http://localhost/Airline-System-Backend/public/api/register", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -106,16 +107,55 @@ async function fetchSignupApi(name,email,password,phoneNumber) {
             }),
         });
 
+
+        console.log(res);
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
-
+        else{
+            console.log(res.body);
+        }
         const data = await res.json();
-        return data; // You can process the data as needed
+        console.log(data.message);
+
     } catch (error) {
         console.error('Error:', error);
     }
 }
+/* 
+async function fetchSignupApi(name, email, password, phoneNumber) {
+    try {
+        // Construct the query string
+        const queryString = new URLSearchParams({
+            name: name,
+            email: email,
+            password: password,
+            phoneNumber: phoneNumber
+        }).toString();
+
+        // Send a GET request with query parameters
+        const res = await fetch(`http://localhost/Airline-System-Backend/public/api/register?${queryString}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+
+        // Log the response for debugging
+        console.log(res);
+
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        // Parse and log the response data
+        const data = await res.json();
+        console.log("Data received after success:", data);
+
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}*/
 
 function sanitizeSignUpForm() {
     let name = sanitizeInput(document.getElementById('signUpName').value);
@@ -166,6 +206,7 @@ function sanitizeSignUpForm() {
 
     showPopup('Sign Up Form is valid');
     // You can proceed with form submission or further processing
+    console.log(name,"====",email,"====",password,"====",phoneNumber,"====");
     fetchSignupApi(name,email,password,phoneNumber);
 
 }
