@@ -304,7 +304,7 @@ input {
     color: #000;
 }
 
-forgot-pass {
+.forgot-pass {
     margin-top: 15px;
     text-align: center;
     color: #cfcfcf;
@@ -386,6 +386,11 @@ forgot-pass {
     padding-left: 30px;
 }
 
+
+
+
+
+/* Add this to your styles.css */
 .popup {
     position: fixed;
     top: 50%;
@@ -419,4 +424,14 @@ forgot-pass {
 
 #close-popup:hover {
     background-color: #0056b3;
+}
+
+
+
+.passwordToggle {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
 }
