@@ -20,4 +20,49 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.airplane-image').addEventListener('mouseleave', function() {
     img.style.transform = 'translate(0, 0)'; // Reset the image position
     });
+    document.getElementById('signInButton').addEventListener('click', sanitizeSignInForm);
+document.getElementById('signUpButton').addEventListener('click', sanitizeSignUpForm);
+document.getElementById('close-popup').addEventListener('click', closePopup);
+
+function sanitizeInput(input) {
+    let sanitized = input.trim();
+    sanitized = sanitized.replace(/[<>\/\\'";]/g, '');
+    return sanitized;
 }
+
+function showPopup(message) {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popup-message');
+    popupMessage.textContent = message;
+    popup.classList.remove('hidden');
+    popup.style.display = 'block';
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.classList.add('hidden');
+    popup.style.display = 'none';
+}
+
+    function sanitizeSignInForm() {
+        let email = sanitizeInput(document.getElementById('signInEmail').value);
+        let password = sanitizeInput(document.getElementById('signInPassword').value);
+
+        if (!email || !password) {
+            showPopup('Email and Password cannot be empty');
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            showPopup('Invalid email format');
+            return;
+        }
+
+        if (!validatePassword(password)) {
+            showPopup('Password must be at least 6 characters long');
+            return;
+        }
+
+        showPopup('Sign In Form is valid');
+    }
+});
