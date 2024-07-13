@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 .flights{
@@ -15,8 +16,10 @@
     flex-direction: row;
     border-radius: 0%;
     min-height: 100px;
+    border-radius: 30px;
 
 }
+
 
 .box{
     flex-shrink: 1;
@@ -29,6 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .flight-number h1{
@@ -43,6 +47,7 @@
 
 .from-to-div{
     background-color: #1D3A6F;
+    color: white;
     flex-grow: 4;
     display: flex;
     flex-direction: row;
@@ -51,7 +56,39 @@
     padding: 0 20px 0 20px;
 }
 
+.from-to-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .details-div{
     flex-grow: 5;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 20px 0;
+}
+
+.detail h3{
+    text-align: center;
+
+}
+
+.detail h1{
+    font-size: 50px;
+
+}
+
+.detail img{
+    height: 30px;
+    margin-bottom: 10px;
 }
