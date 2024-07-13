@@ -167,14 +167,6 @@ const passwordToggles = document.querySelectorAll('.passwordToggleClass');
         });
     });
 
-
-
-
-
-
-
-
-
     const signInPasswordToggle = document.getElementById('signInpasswordToggle');
     const signUpPasswordToggle1 = document.getElementById('signUpPasswordToggle1');
     const signUpPasswordToggle2 = document.getElementById('signUpPasswordToggle2');
@@ -191,9 +183,9 @@ if (signUpPasswordToggle1) {
     signUpPasswordToggle1.addEventListener('mouseleave', () => togglePasswordVisibility('signUpPassword', false));
 }
 if (signUpPasswordToggle2) {
-    signUpPasswordToggle2.addEventListener('mousedown', () => togglePasswordVisibility('signUpPassword', true));
-    signUpPasswordToggle2.addEventListener('mouseup', () => togglePasswordVisibility('signUpPassword', false));
-    signUpPasswordToggle2.addEventListener('mouseleave', () => togglePasswordVisibility('signUpPassword', false));
+    signUpPasswordToggle2.addEventListener('mousedown', () => togglePasswordVisibility('signUpConfirmPassword', true));
+    signUpPasswordToggle2.addEventListener('mouseup', () => togglePasswordVisibility('signUpConfirmPassword', false));
+    signUpPasswordToggle2.addEventListener('mouseleave', () => togglePasswordVisibility('signUpConfirmPassword', false));
 }
 
 function togglePasswordVisibility(inputId, show) {
@@ -201,17 +193,15 @@ function togglePasswordVisibility(inputId, show) {
     if (passwordInput) {
         if (show) {
             passwordInput.type = 'text';
-            passwordToggle.classList.remove('fa-eye-slash');
-            passwordToggle.classList.add('fa-eye');
+            //passwordToggle.classList.remove('fa-eye-slash');
+            //passwordToggle.classList.add('fa-eye');
         } else {
             passwordInput.type = 'password';
-            passwordToggle.classList.remove('fa-eye');
-            passwordToggle.classList.add('fa-eye-slash');
+            //passwordToggle.classList.remove('fa-eye');
+            //passwordToggle.classList.add('fa-eye-slash');
         }
     }
 }
-
-
 
 
 });
