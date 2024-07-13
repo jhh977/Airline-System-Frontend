@@ -134,4 +134,76 @@ function closePopup() {
         const re = /^\+961\s\d{8}$/;
         return re.test(phoneNumber);
     }
+
+    const passwordToggles = document.querySelectorAll('.passwordToggleClass');
+
+    passwordToggles.forEach(toggle => {
+        const passwordInput = toggle.previousElementSibling; // Get the corresponding input field
+
+        // Add mousedown event to show password
+        toggle.addEventListener('mousedown', () => {
+            passwordInput.type = 'text';
+            toggle.classList.remove('fa-eye-slash');
+            toggle.classList.add('fa-eye');
+            
+        });
+
+        // Add mouseup and mouseleave events to hide password
+        toggle.addEventListener('mouseup', () => {
+            passwordInput.type = 'password';
+            toggle.classList.remove('fa-eye');
+            toggle.classList.add('fa-eye-slash');
+        });
+
+        toggle.addEventListener('mouseleave', () => {
+            passwordInput.type = 'password';
+            toggle.classList.remove('fa-eye');
+            toggle.classList.add('fa-eye-slash');
+        });
+    });
+
+
+
+
+
+
+
+
+
+    const signInPasswordToggle = document.getElementById('signInpasswordToggle');
+    const signUpPasswordToggle1 = document.getElementById('signUpPasswordToggle1');
+    const signUpPasswordToggle2 = document.getElementById('signUpPasswordToggle2');
+    
+if (signInPasswordToggle) {
+    signInPasswordToggle.addEventListener('mousedown', () => togglePasswordVisibility('signInPassword', true));
+    signInPasswordToggle.addEventListener('mouseup', () => togglePasswordVisibility('signInPassword', false));
+    signInPasswordToggle.addEventListener('mouseleave', () => togglePasswordVisibility('signInPassword', false));
+}
+
+if (signUpPasswordToggle1) {
+    signUpPasswordToggle1.addEventListener('mousedown', () => togglePasswordVisibility('signUpPassword', true));
+    signUpPasswordToggle1.addEventListener('mouseup', () => togglePasswordVisibility('signUpPassword', false));
+    signUpPasswordToggle1.addEventListener('mouseleave', () => togglePasswordVisibility('signUpPassword', false));
+}
+if (signUpPasswordToggle2) {
+    signUpPasswordToggle2.addEventListener('mousedown', () => togglePasswordVisibility('signUpPassword', true));
+    signUpPasswordToggle2.addEventListener('mouseup', () => togglePasswordVisibility('signUpPassword', false));
+    signUpPasswordToggle2.addEventListener('mouseleave', () => togglePasswordVisibility('signUpPassword', false));
+}
+
+function togglePasswordVisibility(inputId, show) {
+    const passwordInput = document.getElementById(inputId);
+    if (passwordInput) {
+        if (show) {
+            passwordInput.type = 'text';
+            passwordToggle.classList.remove('fa-eye-slash');
+            passwordToggle.classList.add('fa-eye');
+        } else {
+            passwordInput.type = 'password';
+            passwordToggle.classList.remove('fa-eye');
+            passwordToggle.classList.add('fa-eye-slash');
+        }
+    }
+}
+
 });
