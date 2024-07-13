@@ -21,8 +21,6 @@ document.querySelector('.airplane-image').addEventListener('mouseleave', functio
 img.style.transform = 'translate(0, 0)'; // Reset the image position
 });
 
-
-
 document.getElementById('signInButton').addEventListener('click', sanitizeSignInForm);
 document.getElementById('signUpButton').addEventListener('click', sanitizeSignUpForm);
 document.getElementById('close-popup').addEventListener('click', closePopup);
@@ -47,6 +45,30 @@ function closePopup() {
     popup.style.display = 'none';
 }
 
+async function fetchLoginApi(email, password) {
+    try {
+        const res = await fetch("backendAPI", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            }),
+        });
+
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        return data; // You can process the data as needed
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 function sanitizeSignInForm() {
     let email = sanitizeInput(document.getElementById('signInEmail').value);
     let password = sanitizeInput(document.getElementById('signInPassword').value);
@@ -66,8 +88,33 @@ function sanitizeSignInForm() {
         return;
     }
 
-    showPopup('Sign In Form is valid');
-    // You can proceed with form submission or further processing
+    fetchLoginApi(email,password);
+}
+
+async function fetchSignupApi(name,email,password,phoneNumber) {
+    try {
+        const res = await fetch("backendAPI", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name:name,
+                email: email,
+                password: password,
+                phoneNumber:phoneNumber,
+            }),
+        });
+
+        if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        return data; // You can process the data as needed
+    } catch (error) {
+        console.error('Error:', error);
+    }
 }
 
 function sanitizeSignUpForm() {
@@ -119,6 +166,8 @@ function sanitizeSignUpForm() {
 
     showPopup('Sign Up Form is valid');
     // You can proceed with form submission or further processing
+    fetchSignupApi(name,email,password,phoneNumber);
+
 }
 
 function validateEmail(email) {
