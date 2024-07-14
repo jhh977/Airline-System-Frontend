@@ -1,40 +1,40 @@
-const hotelsData = {
-  hotels: [
-    {
-      name: "Phoenicia Beirut",
-      imageUrl: "assets/phoneca_beirut.jpg",
-      location: "Beirut",
-      rating: 4.5,
-      services: [
-        "Restaurant",
-        "Hotel star",
-        "Free Parking",
-        "Free WiFi",
-        "Air Conditioning",
-        "Coffee Shop",
-        "Fitness Center",
-      ],
-    },
-    {
-      name: "Another Hotel",
-      imageUrl: "assets/another_hotel.jpg",
-      location: "Tripoli",
-      rating: 4.0,
-      services: ["Restaurant", "Free Parking", "Free WiFi"],
-    },
-    {
-      name: "Luxury Resort",
-      imageUrl: "assets/luxury_resort.jpg",
-      location: "Jounieh",
-      rating: 4.8,
+// const hotelsData = {
+//   hotels: [
+//     {
+//       name: "Phoenicia Beirut",
+//       imageUrl: "assets/phoneca_beirut.jpg",
+//       location: "Beirut",
+//       rating: 4.5,
+//       services: [
+//         "Restaurant",
+//         "Hotel star",
+//         "Free Parking",
+//         "Free WiFi",
+//         "Air Conditioning",
+//         "Coffee Shop",
+//         "Fitness Center",
+//       ],
+//     },
+//     {
+//       name: "Another Hotel",
+//       imageUrl: "assets/another_hotel.jpg",
+//       location: "Tripoli",
+//       rating: 4.0,
+//       services: ["Restaurant", "Free Parking", "Free WiFi"],
+//     },
+//     {
+//       name: "Luxury Resort",
+//       imageUrl: "assets/luxury_resort.jpg",
+//       location: "Jounieh",
+//       rating: 4.8,
 
-      services: ["Restaurant", "Spa", "Beach Access", "Pool", "Free WiFi"],
-    },
-  ],
-};
-const data = hotelsData;
+//       services: ["Restaurant", "Spa", "Beach Access", "Pool", "Free WiFi"],
+//     },
+//   ],
+// };
+// const data = hotelsData;
 
-updateHotelListings(data.hotels);
+// updateHotelListings(data.hotels);
 
 function updateHotelListings(hotels) {
   const hotelListingsSection = document.querySelector(".hotel-listings");
@@ -105,10 +105,11 @@ document.addEventListener("DOMContentLoaded", function () {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            searchText: searchText,
-            fromDate: fromDate,
-            toDate: toDate,
-            guests: guests,
+            name: searchText,
+            //     searchText: searchText,
+            //     fromDate: fromDate,
+            //     toDate: toDate,
+            //     guests: guests,
           }),
         }
       );
@@ -116,7 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new error(`http error! status: ${response.status}`);
       }
       const data = await response.json();
-      updateHotelListings(data);
+      console.log(data);
+      //   updateHotelListings(data);
     } catch (error) {
       console.error("Error:", error);
     }
