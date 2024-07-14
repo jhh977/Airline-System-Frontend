@@ -89,3 +89,81 @@ header .login-btn {
   margin-left: 5px;
   gap: 10px;
 }
+
+.hotel {
+  margin: 70px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #003366;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hotel img {
+  width: 100vw;
+  max-width: 390px;
+  height: 310px;
+  border-radius: 20px 0 0 20px;
+}
+
+.hotel .info {
+  flex: 1;
+  width: 100vw;
+}
+
+.hotel .info h2 {
+  /* background-color: white; */
+  width: 50vw;
+  margin: 15px;
+  color: white;
+  /* color: red; */
+}
+
+.hotel .info .location-rating {
+  /* background-color: white; */
+  width: 50vw;
+  margin: 0 0 20px 15px;
+  color: white;
+  display: flex;
+  gap: 20px;
+
+  border-radius: 5px;
+}
+
+.hotel .info .hotel-serves {
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* background-color: white; */
+  margin: 15px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.hotel-serves p {
+  /* background-color: blue; */
+  color: white;
+  display: flex;
+  align-items: center;
+
+  width: 160px;
+  height: 40px;
+  border-radius: 5px;
+  gap: 10px;
+  margin: 0;
+}
+
+.view-take {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-take:hover {
+  background-color: gray;
+}
