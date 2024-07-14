@@ -9,6 +9,24 @@
     display: flex;
     flex-direction: column;
 }
+.days{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 50px;
+
+}
+
+.single-day{
+    margin: 0 20px 0 20px;
+}
+
+.line{
+    border-top: 1px solid black;
+    flex-grow: 4;
+    height: 0;
+
+}
 
 .single-flight{
     background-color: #76AAFF;
@@ -98,6 +116,10 @@
     .single-flight{
         flex-direction: column;
     }
+
+    .single-day h1{
+        font-size: x-large;
+    }
   }
 
 @media only screen and (max-width:615px) {
@@ -113,6 +135,9 @@
     }
     .detail:nth-child(3){
         border: none;
+    }
+    .line:nth-child(1){
+        display: none;
     }
 
   }
