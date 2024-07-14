@@ -32,3 +32,52 @@ const hotelsData = {
     },
   ],
 };
+const data = hotelsData;
+
+updateHotelListings(data.hotels);
+
+function updateHotelListings(hotels) {
+  const hotelListingsSection = document.querySelector(".hotel-listings");
+  hotelListingsSection.innerHTML = "";
+
+  hotels.forEach((hotel) => {
+    const hotelElement = document.createElement("div");
+    hotelElement.classList.add("hotel");
+
+    hotelElement.innerHTML = `
+      <div class="hotel">
+        <img
+          src="${hotel.imageUrl}"
+          alt="${hotel.name}"
+          class="image"
+        />
+
+        <div class="info">
+          <h2 class="hotel-name">${hotel.name}</h2>
+          <div class="location-rating">
+            <p>
+              <i class="fas fa-star"></i>
+              ${hotel.rating} rating
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt"></i>
+              ${hotel.location}
+            </p>
+          </div>
+
+          <div class="hotel-serves">
+            ${hotel.services
+              .map(
+                (service) => `<p><i class="fas fa-utensils"></i> ${service}</p>`
+              )
+              .join("")}
+          </div>
+        </div>
+
+        <button class="view-take">take</button>
+      </div>
+    `;
+
+    hotelListingsSection.appendChild(hotelElement);
+  });
+}
