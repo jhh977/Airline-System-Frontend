@@ -167,3 +167,123 @@ header .login-btn {
 .view-take:hover {
   background-color: gray;
 }
+
+@media (max-width: 1200px) {
+  .login-icons {
+    justify-content: space-between;
+  }
+  .hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hotel img {
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .hotel .info {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+  .hotel-serves {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .search-bar {
+    justify-content: center;
+    width: auto;
+    flex-wrap: wrap;
+  }
+
+  .search-bar > * {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+
+  header nav ul {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  header nav ul li {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .login-icons {
+    flex-wrap: wrap;
+  }
+
+  .login-icons img {
+    width: auto;
+    margin: 5px;
+  }
+
+  .login-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 650px) {
+  header .logo-box {
+    font-size: 24px;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  header nav ul li {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  header .login-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .hotel {
+    margin: 30px 15px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hotel .info .hotel-serves {
+    flex-direction: column;
+
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .hotel .info .hotel-serves p {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 5px 0;
+  }
+}
