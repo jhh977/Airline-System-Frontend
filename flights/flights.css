@@ -92,3 +92,27 @@
     height: 30px;
     margin-bottom: 10px;
 }
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .single-flight{
+        flex-direction: column;
+    }
+  }
+
+@media only screen and (max-width:615px) {
+    /* For mobile phones: */
+    .details-div{
+        flex-direction: column;
+    }
+
+    .detail{
+        
+    padding: 0;
+    border-bottom: 1px solid black;
+    }
+    .detail:nth-child(3){
+        border: none;
+    }
+
+  }
