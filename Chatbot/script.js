@@ -105,7 +105,6 @@ const generateResponse = async (userMessage, chatElement) => {
         chatbox.scrollTo(0, chatbox.scrollHeight); // Ensure the chatbox scrolls to the bottom
     }
 }
-
 const handleChat = () => {
     userMessage = chatInput.value.trim(); // Get user entered message and remove extra whitespace
     if (!userMessage) return;
