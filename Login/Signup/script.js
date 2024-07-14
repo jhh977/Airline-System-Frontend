@@ -239,7 +239,7 @@ function sanitizeSignUpForm() {
     //showPopup('Sign Up Form is valid');
     // You can proceed with form submission or further processing
     //console.log(name,"====",email,"====",password,"====",phoneNumber,"====");
-    if(fetchSignupApi(name,email,password,phoneNumber)){
+    if(fetchSignupApi   (name,email,password,phoneNumber)){
         document.getElementById('signUpName').value='';
         document.getElementById('signUpEmail').value='';
         document.getElementById('signUpPassword').value='';
