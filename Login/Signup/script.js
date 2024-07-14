@@ -47,7 +47,7 @@ function closePopup() {
 
 async function fetchLoginApi(email, password) {
     try {
-        const res = await fetch("backendAPI", {
+        const res = await fetch("http://localhost/Airline-System-Backend/public/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -62,8 +62,18 @@ async function fetchLoginApi(email, password) {
             throw new Error(`HTTP error! status: ${res.status}`);
         }
 
-        const data = await res.json();
-        return data; // You can process the data as needed
+        const data = await res.json(); 
+        switch (data.message) {
+            case "Email and password are required.":
+                showPopup("Can't have empty fields");
+                break;
+            case "Invalid email or password.":
+                showPopup("Invalid email or password");
+                break;
+            case "Login successful":
+                showPopup("Welcome to our website");
+                return true; 
+        }
     } catch (error) {
         console.error('Error:', error);
     }
@@ -88,11 +98,15 @@ function sanitizeSignInForm() {
         return;
     }
 
-    fetchLoginApi(email,password);
+    if(fetchLoginApi(email,password)){
+        showPopup("go to landing page");
+        document.getElementById('signInEmail').value="";
+        document.getElementById('signInPassword').value="";
+    }
 }
 
 
-async function fetchSignupApi(name,email,password,phoneNumber) {
+async function fetchSignupApi(name, email, password, phoneNumber) {
     try {
         const res = await fetch("http://localhost/Airline-System-Backend/public/api/register", {
             method: "POST",
@@ -100,24 +114,42 @@ async function fetchSignupApi(name,email,password,phoneNumber) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                name:name,
+                name: name,
                 email: email,
                 password: password,
-                phoneNumber:phoneNumber,
+                phoneNumber: phoneNumber,
             }),
         });
 
-
-        console.log(res);
         if (!res.ok) {
             throw new Error(`HTTP error! status: ${res.status}`);
+        } else {
+            console.log("Response is fine");
         }
-        else{
-            console.log(res.body);
-        }
-        const data = await res.json();
-        console.log(data.message);
 
+        const data = await res.json(); // Parsing response JSON
+
+        switch (data.message) {
+            case "All fields are required":
+                showPopup("Can't have empty fields");
+                break;
+            case "Invalid email format.":
+                showPopup("Wrong email format");
+                break;
+            case "Password must be at least 6 characters long.":
+                showPopup("Password must be at least 6 characters long.");
+                break;
+            case "User registered successfully.":
+                showPopup("You have registered successfully, you may login now");
+                break;
+            case "Failed to register user.":
+                showPopup("Failed to register user, please try again");
+                break;
+            default:
+                showPopup("An unknown error occurred");
+                return true;
+                //break;
+        }
     } catch (error) {
         console.error('Error:', error);
     }
@@ -204,10 +236,16 @@ function sanitizeSignUpForm() {
         return;
     }
 
-    showPopup('Sign Up Form is valid');
+    //showPopup('Sign Up Form is valid');
     // You can proceed with form submission or further processing
-    console.log(name,"====",email,"====",password,"====",phoneNumber,"====");
-    fetchSignupApi(name,email,password,phoneNumber);
+    //console.log(name,"====",email,"====",password,"====",phoneNumber,"====");
+    if(fetchSignupApi(name,email,password,phoneNumber)){
+        document.getElementById('signUpName').value='';
+        document.getElementById('signUpEmail').value='';
+        document.getElementById('signUpPassword').value='';
+        document.getElementById('signUpConfirmPassword').value='';
+        document.getElementById('signUpPhoneNumber').value='';
+    }
 
 }
 
