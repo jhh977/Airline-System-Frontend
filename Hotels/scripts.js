@@ -1,40 +1,40 @@
-const hotelsData = {
-  hotels: [
-    {
-      name: "Phoenicia Beirut",
-      imageUrl: "assets/phoneca_beirut.jpg",
-      location: "Beirut",
-      rating: 4.5,
-      services: [
-        "Restaurant",
-        "Hotel star",
-        "Free Parking",
-        "Free WiFi",
-        "Air Conditioning",
-        "Coffee Shop",
-        "Fitness Center",
-      ],
-    },
-    {
-      name: "Another Hotel",
-      imageUrl: "assets/another_hotel.jpg",
-      location: "Tripoli",
-      rating: 4.0,
-      services: ["Restaurant", "Free Parking", "Free WiFi"],
-    },
-    {
-      name: "Luxury Resort",
-      imageUrl: "assets/luxury_resort.jpg",
-      location: "Jounieh",
-      rating: 4.8,
+// const hotelsData = {
+//   hotels: [
+//     {
+//       name: "Phoenicia Beirut",
+//       imageUrl: "assets/phoneca_beirut.jpg",
+//       location: "Beirut",
+//       rating: 4.5,
+//       services: [
+//         "Restaurant",
+//         "Hotel star",
+//         "Free Parking",
+//         "Free WiFi",
+//         "Air Conditioning",
+//         "Coffee Shop",
+//         "Fitness Center",
+//       ],
+//     },
+//     {
+//       name: "Another Hotel",
+//       imageUrl: "assets/another_hotel.jpg",
+//       location: "Tripoli",
+//       rating: 4.0,
+//       services: ["Restaurant", "Free Parking", "Free WiFi"],
+//     },
+//     {
+//       name: "Luxury Resort",
+//       imageUrl: "assets/luxury_resort.jpg",
+//       location: "Jounieh",
+//       rating: 4.8,
 
-      services: ["Restaurant", "Spa", "Beach Access", "Pool", "Free WiFi"],
-    },
-  ],
-};
-const data = hotelsData;
+//       services: ["Restaurant", "Spa", "Beach Access", "Pool", "Free WiFi"],
+//     },
+//   ],
+// };
+// const data = hotelsData;
 
-updateHotelListings(data.hotels);
+// updateHotelListings(data.hotels);
 
 function updateHotelListings(hotels) {
   const hotelListingsSection = document.querySelector(".hotel-listings");
@@ -80,4 +80,27 @@ function updateHotelListings(hotels) {
 
     hotelListingsSection.appendChild(hotelElement);
   });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.getElementById("search");
+
+  searchButton.addEventListener("click", async function () {
+    const searchText = sanitizeInput(document.getElementById("text").value);
+    const fromDate = sanitizeInput(document.getElementById("from-date").value);
+    const toDate = sanitizeInput(document.getElementById("to-date").value);
+    const guests = sanitizeInput(document.getElementById("guest").value);
+
+    if (!searchText) {
+      showPopup("Search text cannot be empty");
+      return;
+    }
+  });
+});
+function sanitizeInput(input) {
+  return input.trim();
+}
+
+function showPopup(message) {
+  alert(message);
 }
