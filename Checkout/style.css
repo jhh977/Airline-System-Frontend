@@ -1,0 +1,101 @@
+body{
+    background-color: #0050FF;
+    overflow: hidden;
+}
+
+.container{
+    margin: 40px 40px 10px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.trip-details{
+    width: 60vw;
+    background-color: #22437D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.trip-details-text{
+    color: #fff;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding-left: 20px;
+}
+ h3 {
+    color: #fff;
+    padding-left: 40px;
+}
+
+.plane-departure{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.departure-from-to{
+    display: flex;
+    flex-direction: column;
+}
+
+.departure-date{
+    color: #fff;
+    border: 1px solid #0050FF;
+}
+.departure-date p {
+    font-size: 30px;
+}
+
+.departure-from{
+    padding-left: 20px;
+    display: flex;
+    border: 1px solid #0050FF;
+}
+.departure-from-to p {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+.fa-plane{
+    color: #FBAD06;
+    padding-top: 25px;
+}
+.fa-bed{
+    color: #FBAD06;
+    padding-top: 25px;
+}
+.fa-taxi{
+    color: #FBAD06;
+    padding-top: 25px;
+}
+
+.fa-credit-card{
+    color: #4a4948;
+    padding-top: 25px;
+}
+
+.departure-to{
+    padding-left: 20px;
+    display: flex;
+    border: 1px solid #0050FF;
+}
+.departure-to p {
+    padding-left: 20px;
+    color: #fff;
+}
+
+.hotel-taxi-details{
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.payment-details{
+    background-color: #fff;
+    width: 30vw;
+}
+
+.payment{
+    
+}
