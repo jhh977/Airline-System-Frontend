@@ -8,6 +8,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 90vh;
 }
 .trip-details{
     width: 60vw;
@@ -182,4 +183,23 @@ body{
     cursor: pointer; 
     text-decoration: none;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1067px) {
+    .container{
+        flex-direction: column;
+    }
+    .plane-departure{
+        flex-direction: column;
+        
+    }
+    body{
+        overflow: auto;
+    }
+    .payment-details{
+        width: 80vw;
+    }
+    .trip-details{
+        width: 80vw;
+    }
 }
