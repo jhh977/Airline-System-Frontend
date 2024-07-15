@@ -47,7 +47,7 @@ header {
 }
 
 .navbar ul li {
-  margin: 0 10px;
+  gap: 10px;
   cursor: pointer;
 }
 
@@ -100,7 +100,7 @@ header {
 .search-form button {
   background-color: black;
   color: white;
-  padding: 10px 12px;
+  padding: 5px 20px;
   border-radius: 5px;
 }
 .all-cards {
@@ -146,4 +146,10 @@ header {
   height: 25px;
   color: white;
   background-color: black;
+}
+
+@media (min-width: 650) {
+  .nav ul li {
+    font-size: 8px;
+  }
 }
