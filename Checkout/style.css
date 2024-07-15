@@ -4,7 +4,7 @@ body{
 }
 
 .container{
-    margin: 40px 40px 10px 40px;
+    margin: 40px 65px 40px 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,6 +15,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-shrink: 1;
 }
 .trip-details-text{
     color: #fff;
@@ -94,8 +95,91 @@ body{
 .payment-details{
     background-color: #fff;
     width: 30vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .payment{
+    display: flex;
+}
+.payment h1{
+    padding-left: 20px;
+}
+.payment h1{
+    display: flex;
+}
+
+.card-number{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-input {
+    border: none; /* Remove all borders */
+    border-bottom: 1px solid black; /* Add a bottom border */
+    background: none; /* Remove background */
+    outline: none; /* Remove outline when focused */
+    width: 20%; /* Optional: Make it take the full width of its container */
+    padding: 5px 0; /* Optional: Add some padding */
+    font-size: 16px; /* Optional: Adjust font size */
+}
+.payment-details-container{
+    padding-left: 40px;
     
+}
+
+.expiary-date-CVV{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiary-date-CVV-inputs{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiary-date-inputs{
+    display: inline;
+    justify-content: flex-start;
+}
+.CVV-input{
+    display: flex;
+    justify-content: flex-end;
+    width: 50vw;
+}
+
+.payment-details h1,
+.payment-details h2 {
+    color: #2257FD;
+}
+
+.order-comfirm{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.order-text{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.order-button {
+    background-color: #FDB800;
+    color: #fff;
+    padding: 10px 20px; 
+    border: 2px solid #333; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    text-align: center; 
+    display: inline-block; 
+    cursor: pointer; 
+    text-decoration: none;
+    margin-bottom: 10px;
 }
