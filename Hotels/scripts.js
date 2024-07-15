@@ -1,53 +1,43 @@
-// const hotelsData = {
-//   hotels: [
-//     {
-//       name: "Phoenicia Beirut",
-//       imageUrl: "assets/phoneca_beirut.jpg",
-//       location: "Beirut",
-//       rating: 4.5,
-//       services: [
-//         "Restaurant",
-//         "Hotel star",
-//         "Free Parking",
-//         "Free WiFi",
-//         "Air Conditioning",
-//         "Coffee Shop",
-//         "Fitness Center",
-//       ],
-//     },
-//     {
-//       name: "Another Hotel",
-//       imageUrl: "assets/another_hotel.jpg",
-//       location: "Tripoli",
-//       rating: 4.0,
-//       services: ["Restaurant", "Free Parking", "Free WiFi"],
-//     },
-//     {
-//       name: "Luxury Resort",
-//       imageUrl: "assets/luxury_resort.jpg",
-//       location: "Jounieh",
-//       rating: 4.8,
+// const hotels = [
+//   {
+//     imageUrl: "hotel1.jpg",
+//     name: "Hotel One",
+//     rating: 4.5,
+//     location: "City A",
+//     services: ["Free Wi-Fi", "Swimming Pool", "Room Service"],
+//   },
+//   {
+//     imageUrl: "hotel2.jpg",
+//     name: "Hotel Two",
+//     rating: 4.2,
+//     location: "City B",
+//     services: ["Restaurant", "Fitness Center", "Spa"],
+//   },
+// ];
 
-//       services: ["Restaurant", "Spa", "Beach Access", "Pool", "Free WiFi"],
-//     },
-//   ],
-// };
-// const data = hotelsData;
-
-// updateHotelListings(data.hotels);
+// Call the function with your JSON object
+// updateHotelListings(hotels);
 
 function updateHotelListings(hotels) {
   const hotelListingsSection = document.querySelector(".hotel-listings");
   hotelListingsSection.innerHTML = "";
 
-  hotels.forEach((hotel) => {
+  // Convert the object to an array
+  const hotelsArray = Object.values(hotels);
+
+  hotelsArray.forEach((hotel) => {
     const hotelElement = document.createElement("div");
     hotelElement.classList.add("hotel");
+
+    let servicesHtml = "";
+    hotel.services.forEach((service) => {
+      servicesHtml += `<p><i class="${service.service_image}"></i> ${service.name}</p>`;
+    });
 
     hotelElement.innerHTML = `
       <div class="hotel">
         <img
-          src="${hotel.imageUrl}"
+          src="${hotel.hotel_image_url}"
           alt="${hotel.name}"
           class="image"
         />
@@ -61,20 +51,16 @@ function updateHotelListings(hotels) {
             </p>
             <p>
               <i class="fas fa-map-marker-alt"></i>
-              ${hotel.location}
+              ${hotel.city}
             </p>
           </div>
 
           <div class="hotel-serves">
-            ${hotel.services
-              .map(
-                (service) => `<p><i class="fas fa-utensils"></i> ${service}</p>`
-              )
-              .join("")}
+            ${servicesHtml}
           </div>
         </div>
 
-        <button class="view-take">take</button>
+        <button class="view-take">Take</button>
       </div>
     `;
 
@@ -86,12 +72,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchButton = document.getElementById("search");
 
   searchButton.addEventListener("click", async function () {
-    const searchText = sanitizeInput(document.getElementById("text").value);
-    const fromDate = sanitizeInput(document.getElementById("from-date").value);
-    const toDate = sanitizeInput(document.getElementById("to-date").value);
-    const guests = sanitizeInput(document.getElementById("guest").value);
+    const name = sanitizeInput(document.getElementById("text").value);
 
-    if (!searchText) {
+    if (!name) {
       showPopup("Search text cannot be empty");
       return;
     }
@@ -105,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            name: searchText,
+            name: name,
             //     searchText: searchText,
             //     fromDate: fromDate,
             //     toDate: toDate,
@@ -118,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       const data = await response.json();
       console.log(data);
-      //   updateHotelListings(data);
+      updateHotelListings(data);
     } catch (error) {
       console.error("Error:", error);
     }
