@@ -1,7 +1,7 @@
-const herroSection = document.querySelector('.herro-section');
-const airplaneImage = document.querySelector('.airplane-image img');
+const herroSection = document.querySelector(".herro-section");
+const airplaneImage = document.querySelector(".airplane-image img");
 
-herroSection.addEventListener('mousemove', (e) => {
+herroSection.addEventListener("mousemove", (e) => {
   const { offsetX, offsetY, target } = e;
   const { clientWidth, clientHeight } = target;
   const moveX = (offsetX / clientWidth) * 30 - 15; // Adjust the 30 for intensity
@@ -10,20 +10,21 @@ herroSection.addEventListener('mousemove', (e) => {
   airplaneImage.style.transform = `translate(-50%, -50%) translate(${moveX}px, ${moveY}px)`;
 });
 
-herroSection.addEventListener('mouseleave', () => {
+herroSection.addEventListener("mouseleave", () => {
   airplaneImage.style.transform = `translate(-50%, -50%)`; // Reset position on mouse leave
 });
 
-
-const login = document.getElementById('login-btn');
-login.addEventListener('click', function() {
-    window.location.href = '../Login/Signup/login-signup.html';
+const login = document.getElementById("login-btn");
+login.addEventListener("click", function () {
+  window.location.href = "../Login/Signup/login-signup.html";
 });
 
-document.addEventListener('DOMContentLoaded',()=>{
-  const uID = localStorage.getItem('userID');
+document.addEventListener("DOMContentLoaded", () => {
+  const uID = localStorage.getItem("userID");
   console.log(uID);
-  if (typeof uID !== 'undefined') {
-    login.style.display='none';
+  if (typeof uID !== "undefined") {
+    login.style.display = "none";
+  } else {
+    login.style.display = "inline";
   }
-})
+});

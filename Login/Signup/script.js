@@ -1,8 +1,9 @@
+localStorage.clear();
 document.querySelector(".img__btn").addEventListener("click", function () {
   document.querySelector(".cont").classList.toggle("s--signup");
 });
 
-let userID ;
+let userID;
 document.addEventListener("DOMContentLoaded", function () {
   const img = document.querySelector(".airplane-image img");
 
@@ -55,41 +56,40 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchLoginApi(email, password) {
-    
-      const res = await fetch(
-        "http://localhost/Airline-System-Backend/public/api/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: email,
-            password: password,
-          }),
-        }
-      );
-
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
+    const res = await fetch(
+      "http://localhost/Airline-System-Backend/public/api/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
       }
+    );
 
-      const data = await res.json();
-      console.log(data);
-      console.log("message",data.message);
-      localStorage.setItem('userID', data.userID);
-      console.log("userID",data.userID);
-      switch (data.message) {
-        case "Email and password are required.":
-          showPopup("Can't have empty fields");
-          break;
-        case "Invalid email or password.":
-          showPopup("Invalid email or password");
-          break;
-        case "Login successful":
-          showPopup("Welcome to our website");
-          return true;
-      }
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const data = await res.json();
+    console.log(data);
+    console.log("message", data.message);
+    localStorage.setItem("userID", data.userID);
+    console.log("userID", data.userID);
+    switch (data.message) {
+      case "Email and password are required.":
+        showPopup("Can't have empty fields");
+        break;
+      case "Invalid email or password.":
+        showPopup("Invalid email or password");
+        break;
+      case "Login successful":
+        showPopup("Welcome to our website");
+        return true;
+    }
   }
 
   function sanitizeSignInForm() {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //showPopup("go to landing page");
       document.getElementById("signInEmail").value = "";
       document.getElementById("signInPassword").value = "";
-      window.location.href = '../../Landing/index.html';
+      window.location.href = "../../Landing/index.html";
     }
   }
 
