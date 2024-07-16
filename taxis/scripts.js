@@ -1,20 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const search = sanitizeInput(document.getElementById("searchText"));
-  const guest = sanitizeInput(document.getElementById("guests"));
-});
-
 function updateTaxiListing(taxis) {
   const taxiListingSelection = document.querySelector(".all-cards");
   taxiListingSelection.innerHTML = "";
 
-  const array = Object.values(taxis);
-  array.forEach((taxi) => {
+  taxis.forEach((taxi) => {
     const taxiElement = document.createElement("div");
     taxiElement.classList.add("card");
 
-    taxiElement.innerHTML = `        <div class="card">
+    taxiElement.innerHTML = `
+      <div class="card">
                                 <div class="card-image">
-                                        <img src="${taxi.taxi_image}" alt="Image" />
+                                        <img src="${taxi.taxi_logo}" alt="Image" width=250px height=150px>
                                 </div>
                                 
                                 <div class="card-details">
@@ -24,20 +19,22 @@ function updateTaxiListing(taxis) {
                                                         <span id="label">Location:   </span>
                                                         <span id="label">Location:   </span>
                                                         <span id="label">Price per Hour:   </span>
-                                                        <span id="label">Total Price:   </span>
+                                                       
                                                         
                                                 </div>
                                                 <div class="column">
-                                                        <span class="value" id="company-name" placeholder="">${taxi.companyname}</span>
+                                                        <span class="value" id="label" placeholder="companyname">${taxi.name}</span>
                                                         <input class="value" id="location" placeholder="pickup"></input>
                                                         <input class="value" id="location" placeholder="drop"></input>
-                                                        <span class="value" id="price-per-hour">price-per-hour</span>
-                                                        <span class="value" id="total-price">total-price</span>
+                                                        <span class="value" id="price-per-hour">${taxi.price}</span>
+                                                        
                                                 </div>
                                 </div>
                                 
                                 <button class="take-button">Take</button>
-                        </div>`;
+                        </div>
+                </div>
+    `;
     taxiListingSelection.appendChild(taxiElement);
   });
 }
@@ -49,32 +46,55 @@ function sanitizeInput(text) {
 function showPopup(message) {
   alert(message);
 }
-const taxi = [
-  {
-    imageUrl: "hotel1.jpg",
-    companyname: "Hotel One",
-  },
-  {
-    imageUrl: "hotel1.jpg",
-    companyname: "Hotel One",
-  },
-  {
-    imageUrl: "hotel1.jpg",
-    companyname: "Hotel One",
-  },
-  {
-    imageUrl: "hotel1.jpg",
-    companyname: "Hotel One",
-  },
-  {
-    imageUrl: "hotel1.jpg",
-    companyname: "Hotel One",
-  },
-  {
-    imageUrl: "hotel1.jpg",
-    companyname: "Hotel One",
-  },
-];
 
-// Call the function with your JSON object
-updateTaxiListing(taxi);
+document.addEventListener("DOMContentLoaded", function () {
+  const searchButton = document.getElementById("search-button");
+
+  searchButton.addEventListener("click", async function (event) {
+    event.preventDefault(); // Prevent form submission
+
+    const name = sanitizeInput(document.getElementById("searchText").value);
+    const guests = sanitizeInput(document.getElementById("guests").value);
+
+    if (!name) {
+      showPopup("Please enter a city to search for taxis!");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "http://localhost/Airline-System-Backend/public/api/taxis",
+        {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        showPopup(
+          "No taxis found for the specified city. Please try another city."
+        );
+        document.getElementById("searchText").value = "";
+        return;
+      }
+
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        const data = await response.json();
+        console.log(data);
+        updateTaxiListing(data);
+        document.getElementById("searchText").value = "";
+      } else {
+        throw new Error("Response was not in JSON format");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      showPopup("An error occurred while fetching taxis. Please try again.");
+    }
+  });
+});
