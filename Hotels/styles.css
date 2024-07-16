@@ -1,0 +1,299 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 28px;
+}
+
+header .logo-box {
+  font-size: 50px;
+  padding: 5px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+header nav ul li {
+  font-size: 22px;
+  margin-left: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.login-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+header .login-btn {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-bar input,
+.search-bar button {
+  height: 40px;
+  padding: 0 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.search-bar button {
+  background-color: #003366;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+  gap: 10px;
+}
+.hotel-listings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.hotel {
+  background-color: #003366;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  /* margin: 20px 0; */
+}
+
+.hotel img {
+  width: 100vw;
+  max-width: 390px;
+  height: 310px;
+  border-radius: 20px 0px;
+}
+
+.hotel .info {
+  flex: 1;
+  width: 100vw;
+}
+
+.hotel .info h2 {
+  /* background-color: white; */
+  width: 50vw;
+  margin: 15px;
+  color: white;
+  /* color: red; */
+}
+
+.hotel .info .location-rating {
+  /* background-color: white; */
+  width: 50vw;
+  margin: 0 0 20px 15px;
+  color: white;
+  display: flex;
+  gap: 20px;
+
+  border-radius: 5px;
+}
+
+.hotel .info .hotel-serves {
+  width: 50vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  /* background-color: white; */
+  margin: 15px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.hotel-serves p {
+  /* background-color: blue; */
+  color: white;
+  display: flex;
+  align-items: center;
+
+  width: 160px;
+  height: 40px;
+  border-radius: 5px;
+  gap: 10px;
+  margin: 0;
+}
+
+.view-take {
+  align-self: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.view-take:hover {
+  background-color: gray;
+}
+
+@media (max-width: 1200px) {
+  .hotel-listing {
+    gap: 10px;
+  }
+  .login-icons {
+    justify-content: space-between;
+  }
+  .hotel {
+    display: flex;
+  }
+
+  .hotel img {
+    width: 100%;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .hotel .info {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    align-items: center;
+    padding: 20px;
+  }
+  .hotel-serves {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .search-bar {
+    justify-content: center;
+    width: auto;
+    flex-wrap: wrap;
+  }
+  .hotel img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .hotel {
+    height: 80%;
+    border-radius: 10px 0;
+  }
+  .search-bar > * {
+    width: calc(50% - 10px);
+    margin: 5px;
+  }
+
+  header nav ul {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  header nav ul li {
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .login-icons {
+    flex-wrap: wrap;
+  }
+
+  .login-icons img {
+    width: auto;
+    margin: 5px;
+  }
+
+  .login-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 650px) {
+  header .logo-box {
+    font-size: 24px;
+  }
+
+  header nav ul {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  header nav ul li {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  header .login-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .search-bar input,
+  .search-bar button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .hotel {
+    margin: 30px 15px;
+    align-items: center;
+  }
+
+  .info .hotel-serves {
+    flex-direction: column;
+
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .hotel .info .hotel-serves p {
+    width: 100%;
+    justify-content: flex-start;
+    margin: 5px 0;
+  }
+}

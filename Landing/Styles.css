@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  width: 100vw;
+  padding: 20px 0;
+  /* margin: 0; */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.logo {
+  margin: 0 40px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: black;
+  font-size: 30px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+  display: flex;
+
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul li {
+  gap: 10px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.login-icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.icons i {
+  margin-left: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+
+
+
+.herro-section {
+  position: relative;
+  overflow: hidden;
+  height: 30vh; /* Adjust the height as needed */
+}
+
+.sky-image img {
+  width: 100vw;
+  height: auto;
+  transform: translateZ(-1px) scale(1.5);
+  backface-visibility: hidden;
+}
+
+.airplane-image img {
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out; /* Smooth transition */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  background-color: #003366;
+  border-radius: 5px;
+}
+
+.all-forms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.form-group label {
+  color: white;
+  padding: 5px;
+}
+
+.form-group input #class {
+  color: white;
+  padding: 5px;
+  border-radius: 0 0 5px 5px;
+}
+
+.search-btn {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 100px;
+}
+.all-cards {
+  margin-top: 70px;
+
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* background-color: #003366; */
+
+  gap: 50px;
+}
+
+.card-image {
+  width: 250px;
+  height: 150px;
+  background-color: blue;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #003366;
+  color: white;
+  font-size: 14px;
+  gap: 10px;
+  align-items: center;
+}
+.info {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.take-button {
+  width: 100px;
+  border-radius: 5px;
+  height: 25px;
+  color: white;
+  background-color: black;
+}
+
+.upper {
+  margin-top: 30px;
+  height: 200px;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.upper h1 {
+  margin-bottom: 10px;
+}
+.upper h3 {
+  width: 60vw;
+  text-align: center;
+}
+
+.box-support {
+  padding: 5px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #003366;
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-support h4 {
+  text-align: center;
+}
+.box-support p {
+  width: 200px;
+  text-align: center;
+}
+#left {
+  margin-top: -20px;
+}
+#right {
+  margin-top: 50px;
+}
+.support-info {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+.contact-button {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+.footer-links {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  background-color: #003366;
+}
+
+.footer-column ul {
+  margin: 20px 0;
+  /* background-color: white; */
+  list-style: none;
+}
+.footer-column ul li {
+  font-size: px;
+  /* background-color: red; */
+  margin-top: 10px;
+}
+.footer-logo p {
+  font-size: 25px;
+  margin-top: 20px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}

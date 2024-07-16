@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  width: 100vw;
+  padding: 20px 0;
+  /* margin: 0; */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.logo {
+  margin: 0 40px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: black;
+  font-size: 30px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.navbar ul li {
+  gap: 10px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.login-icon {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.icons i {
+  margin-left: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.search-form {
+  /* background-color: blue; */
+
+  display: flex;
+  justify-content: center;
+  padding: 100px 0 30px 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.search-form input {
+  /* background-color: red; */
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+  gap: 5px;
+}
+.search-form button {
+  background-color: black;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color:#003366;; */
+
+  gap: 50px;
+}
+
+.card-image {
+  width: 250px;
+  height: 150px;
+  background-color: blue;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #003366;
+  color: white;
+  font-size: 14px;
+  gap: 10px;
+  align-items: center;
+}
+.info {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+.column {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.column input {
+  /* background-color: red; */
+  width: 120px;
+}
+.column #label {
+  /* background-color: red; */
+  padding: 1px;
+}
+
+.take-button {
+  width: 100px;
+  border-radius: 5px;
+  height: 25px;
+  color: white;
+  background-color: black;
+}
+
+@media (min-width: 650) {
+  .nav ul li {
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">Logo</div>
+        <nav class="navbar">
+          <ul>
+            <li>Home</li>
+            <li>Fligh</li>
+            <li>Cars</li>
+            <li>Hotels</li>
+            <li>ChatBot</li>
+          </ul>
+        </nav>
+        <div class="login-icon">
+          <button class="login-btn">Login</button>
+          <i class="fa-solid fa-bell"></i>
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+    </header>
+
+    <section class="herro-section">
+      <div class="sky-image">
+        <img src="../Assets/Images/sky-pic.jpg" alt="airplane" width="600px" />
+      </div>
+      <div class="airplane-image">
+        <img
+          src="../Assets/Images/airplane-removebg-preview.png"
+          alt="airplane"
+          width="600px"
+        />
+      </div>
+    </section>
+    <section class="container">
+      <div class="title">
+        <h1>Millions of Cheap Flights. One Simple Search</h1>
+      </div>
+
+      <div class="all-forms">
+        <div class="form-group">
+          <label for="from">From:</label>
+          <input
+            type="text"
+            id="from"
+            name="from"
+            placeholder="Enter departure city"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="to">To:</label>
+          <input
+            type="text"
+            id="to"
+            name="to"
+            placeholder="Enter destination city"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="travellers">Travellers:</label>
+          <input
+            type="number"
+            id="travellers"
+            name="travellers"
+            min="1"
+            placeholder="Number of travellers"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="class">Class:</label>
+          <select id="class" name="class">
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First</option>
+          </select>
+        </div>
+        <button class="search-btn">Search</button>
+      </div>
+    </section>
+    <section class="all-cards">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/38148928.jpg?k=76965aaa0792e783dc339a69174311f356c3079bb84691aac3363764b32885c2&o=&hp=1"width=250px height=150px alt="Image" />
+        </div>
+
+        <div class="card-details">
+          <div class="info">
+            <div class="column">
+              <span class="label" id="from">From</span>
+              <span class="label" id="to">To</span>
+              <span class="label" id="date">Date</span>
+              <span class="label" id="price">price</span>
+            </div>
+            <div class="column">
+              <span class="value" id="from-value">Lebanon</span>
+              <span class="value" id="to-value">Egypt</span>
+              <span class="value" id="date-value">Aug-1-2024</span>
+              <span class="value" id="price-value">1000$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/38148928.jpg?k=76965aaa0792e783dc339a69174311f356c3079bb84691aac3363764b32885c2&o=&hp=1"width=250px height=150px alt="Image" />
+        </div>
+
+        <div class="card-details">
+          <div class="info">
+            <div class="column">
+              <span class="label" id="from">From</span>
+              <span class="label" id="to">To</span>
+              <span class="label" id="date">Date</span>
+              <span class="label" id="price">price</span>
+            </div>
+            <div class="column">
+              <span class="value" id="from-value">Lebanon</span>
+              <span class="value" id="to-value">Egypt</span>
+              <span class="value" id="date-value">Aug-1-2024</span>
+              <span class="value" id="price-value">1000$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-image">
+          <img src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/38148928.jpg?k=76965aaa0792e783dc339a69174311f356c3079bb84691aac3363764b32885c2&o=&hp=1"width=250px height=150px alt="Image" />
+        </div>
+
+        <div class="card-details">
+          <div class="info">
+            <div class="column">
+              <span class="label" id="from">From</span>
+              <span class="label" id="to">To</span>
+              <span class="label" id="date">Date</span>
+              <span class="label" id="price">price</span>
+            </div>
+            <div class="column">
+              <span class="value" id="from-value">Lebanon</span>
+              <span class="value" id="to-value">Egypt</span>
+              <span class="value" id="date-value">Aug-1-2024</span>
+              <span class="value" id="price-value">1000$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="upper">
+      <h1>Reach Our Team</h1>
+      <h3>
+        We love questions and feedback and we’re always happy to help here are
+        some way to contact us
+      </h3>
+    </div>
+    <div class="support-info">
+        <div class="box-support" id="left">
+          <h4>Contact Customer Support</h2>
+          <p>We are waiting to help you and your. Dont hesitate to reach out !</p>
+          <button class="contact-button">Contact Support</button>
+        </div>
+        <div class="box-support" id="right">
+          <h4>Contact Customer Support</h2>
+          <p>We are waiting to help you and your. Dont hesitate to reach out !</p>
+          <button class="contact-button">Contact Support</button>
+        </div>
+  </div>
+    <script src="Script.js"></script>
+  </body>
+  <footer class="footer">
+
+    <div class="footer-links">
+      <div class="footer-logo">
+        <p>Logo</p>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li><h5>Company</h5></li>
+          <li>About</li>
+          <li>Features</li>
+          <li>Our Work</li>
+          <li>Carear</li>
+       </ul>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li><h5>Resource</h5></li>
+          <li>Our Vesion</li>
+          <li>Blogs</li>
+          <li>Contact Us</li>
+          <li>Categories</li>
+         
+        </ul>
+      </div>
+      <div class="footer-column">
+        
+        <ul>
+          <li><h5>Help</h5></li>
+          <li>Customer Suppor</li>
+          <li>Team</li>
+          <li>Status</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</html>
