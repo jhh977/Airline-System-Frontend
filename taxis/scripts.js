@@ -9,7 +9,7 @@ function updateTaxiListing(taxis) {
     taxiElement.innerHTML = `
       <div class="card">
                                 <div class="card-image">
-                                        <img src="${taxi.taxi_logo}" alt="Image" width=250px height=150px>
+                                        <img src="${taxi.taxi_logo}" alt="Image" width=330px height=180px>
                                 </div>
                                 
                                 <div class="card-details">
@@ -48,7 +48,7 @@ function showPopup(message) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const searchButton = document.getElementById("search-button");
+  const searchButton = document.getElementById("search");
 
   searchButton.addEventListener("click", async function (event) {
     event.preventDefault(); // Prevent form submission

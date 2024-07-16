@@ -4,7 +4,7 @@
 }
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #e3f2fd;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -187,7 +187,7 @@ header {
 }
 
 .card-image {
-  width: 250px;
+  width: 330px;
   height: 150px;
   background-color: blue;
   border-radius: 10px 10px 0 0;
@@ -202,8 +202,15 @@ header {
   gap: 10px;
   align-items: center;
 }
+.card-details button {
+  padding: 5px 20px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+}
 .info {
-  width: 250px;
+  width: 330px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
