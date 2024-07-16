@@ -49,3 +49,32 @@ function sanitizeInput(text) {
 function showPopup(message) {
   alert(message);
 }
+const taxi = [
+  {
+    imageUrl: "hotel1.jpg",
+    companyname: "Hotel One",
+  },
+  {
+    imageUrl: "hotel1.jpg",
+    companyname: "Hotel One",
+  },
+  {
+    imageUrl: "hotel1.jpg",
+    companyname: "Hotel One",
+  },
+  {
+    imageUrl: "hotel1.jpg",
+    companyname: "Hotel One",
+  },
+  {
+    imageUrl: "hotel1.jpg",
+    companyname: "Hotel One",
+  },
+  {
+    imageUrl: "hotel1.jpg",
+    companyname: "Hotel One",
+  },
+];
+
+// Call the function with your JSON object
+updateTaxiListing(taxi);
