@@ -44,6 +44,7 @@ header {
   padding: 0;
   margin: 0;
   display: flex;
+  gap: 10px;
 }
 
 .navbar ul li {
@@ -135,9 +136,19 @@ header {
   gap: 15px;
 }
 .column {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.column input {
+  /* background-color: red; */
+  width: 120px;
+}
+.column #label {
+  /* background-color: red; */
+  padding: 1px;
 }
 
 .take-button {

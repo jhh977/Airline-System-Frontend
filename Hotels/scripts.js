@@ -97,11 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       );
       if (!response.ok) {
+        showPopup("try another city");
+        document.getElementById("text").value = "";
         throw new error(`http error! status: ${response.status}`);
       }
       const data = await response.json();
       console.log(data);
       updateHotelListings(data);
+      document.getElementById("text").value = "";
     } catch (error) {
       console.error("Error:", error);
     }
