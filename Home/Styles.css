@@ -115,6 +115,7 @@ header {
   max-height: 100%;
   object-fit: contain;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -154,4 +155,54 @@ header {
   padding: 10px;
   border-radius: 10px;
   width: 100px;
+}
+.all-cards {
+  margin-top: 70px;
+
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  /* background-color: #003366; */
+
+  gap: 50px;
+}
+
+.card-image {
+  width: 250px;
+  height: 150px;
+  background-color: blue;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  background-color: #003366;
+  color: white;
+  font-size: 14px;
+  gap: 10px;
+  align-items: center;
+}
+.info {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.take-button {
+  width: 100px;
+  border-radius: 5px;
+  height: 25px;
+  color: white;
+  background-color: black;
 }
