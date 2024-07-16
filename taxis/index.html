@@ -16,33 +16,34 @@
   <body>
     <header>
       <div class="header-container">
-        <div class="logo">Logo</div>
+        <div class="logo"><i class="fa-solid fa-plane fa-1x"></i></div>
         <nav class="navbar">
           <ul>
-            <li>Home</li>
-            <li>Fligh</li>
-            <li>Cars</li>
-            <li>Hotels</li>
-            <li>ChatBot</li>
+            <li><a href="../Landing/index.html">Home</a></li>
+            <li><a href="../taxis/index.html">Taxis</a></li>
+            <li><a href="../Hotels/index.html">Hotels</a></li>
+            <li><a href="../Chatbot/index.html">ChatBot</a></li>
+            
           </ul>
         </nav>
         <div class="login-icon">
-          <button class="login-btn">Login</button>
-          <i class="fa-solid fa-bell"></i>
-          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-user fa-2x"></i>
         </div>
       </div>
     </header>
     <form class="search-form">
         <label for=""></label>
-      <input type="text" id="searchText" placeholder="city...." />
+      <input type="text" id="searchText" placeholder="Search by City...." />
 
       <input type="number" id="guests" placeholder="Number of Guests" />
-      <button id="search-button" class="search">Search</button  >
+      <button class="search" id="search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Search
+      </button>
     </form>
     
         <div class="all-cards">
-                        <!-- <div class="card">
+                        <div class="card">
                                 <div class="card-image">
                                         <img src="image.jpg" alt="Image" />
                                 </div>
@@ -66,10 +67,64 @@
                                                 </div>
                                 </div>
                                 
-                                <button class="take-button">Take</button>
+                                <button class="take-button">Book</button>
                         </div>
                 </div>
-        </div> -->
+                <div class="card">
+                  <div class="card-image">
+                          <img src="image.jpg" alt="Image" />
+                  </div>
+                  
+                  <div class="card-details">
+                          <div class= "info">
+                                  <div class="column">
+                                          <span id="label">Company Name:   </span>
+                                          <span id="label">Location:   </span>
+                                          <span id="label">Location:   </span>
+                                          <span id="label">Price per Hour:   </span>
+                                          
+                                          
+                                  </div>
+                                  <div class="column">
+                                          <span class="value" id="label" placeholder="companyname">companyname</span>
+                                          <input class="value" id="location" placeholder="pickup"></input>
+                                          <input class="value" id="location" placeholder="drop"></input>
+                                          <span class="value" id="price-per-hour">price-per-hour</span>
+                                          
+                                  </div>
+                  </div>
+                  
+                  <button class="take-button">Book</button>
+          </div>
+  </div>
+  <div class="card">
+    <div class="card-image">
+            <img src="image.jpg" alt="Image" />
+    </div>
+    
+    <div class="card-details">
+            <div class= "info">
+                    <div class="column">
+                            <span id="label">Company Name:   </span>
+                            <span id="label">Location:   </span>
+                            <span id="label">Location:   </span>
+                            <span id="label">Price per Hour:   </span>
+                            
+                            
+                    </div>
+                    <div class="column">
+                            <span class="value" id="label" placeholder="companyname">companyname</span>
+                            <input class="value" id="location" placeholder="pickup"></input>
+                            <input class="value" id="location" placeholder="drop"></input>
+                            <span class="value" id="price-per-hour">price-per-hour</span>
+                            
+                    </div>
+    </div>
+    
+    <button class="take-button">Book</button>
+</div>
+</div>
+        </div>
     </section>
     <script src="scripts.js"></script>
   </body>

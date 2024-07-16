@@ -1,5 +1,5 @@
 /* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,93 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background: #E3F2FD;
+  background: #e3f2fd;
+}
+.fa-user {
+  padding-right: 20px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+ul li {
+  font-size: 30px;
+}
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  width: 100vw;
+  padding: 20px 0;
+  /* margin: 0; */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.logo {
+  margin: 0 40px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 30px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  padding-right: 30px;
+}
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 60px;
+  display: flex;
+
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul li {
+  gap: 10px;
+  cursor: pointer;
+}
+
+.login-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.icons i {
+  margin-left: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 .chatbot-toggler {
   position: fixed;
@@ -33,7 +119,7 @@ body.show-chatbot .chatbot-toggler {
   position: absolute;
 }
 .chatbot-toggler span:last-child,
-body.show-chatbot .chatbot-toggler span:first-child  {
+body.show-chatbot .chatbot-toggler span:first-child {
   opacity: 0;
 }
 body.show-chatbot .chatbot-toggler span:last-child {
@@ -51,8 +137,8 @@ body.show-chatbot .chatbot-toggler span:last-child {
   pointer-events: none;
   transform: scale(0.5);
   transform-origin: bottom right;
-  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
-              0 32px 64px -48px rgba(0,0,0,0.5);
+  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+    0 32px 64px -48px rgba(0, 0, 0, 0.5);
   transition: all 0.1s ease;
 }
 body.show-chatbot .chatbot {
@@ -66,7 +152,7 @@ body.show-chatbot .chatbot {
   text-align: center;
   color: #fff;
   background: #724ae8;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .chatbot header span {
   position: absolute;

@@ -107,6 +107,7 @@ header {
 }
 
 .search-bar {
+  margin-top: 70px;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -114,7 +115,7 @@ header {
 
 .search-bar input,
 .search-bar button {
-  height: 40px;
+  height: 30px;
   padding: 0 10px;
   font-size: 16px;
   border-radius: 10px;
@@ -126,10 +127,10 @@ header {
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 5px 20px;
   border-radius: 5px;
-  margin-left: 5px;
-  gap: 10px;
+
+  text-align: center;
 }
 .hotel-listings {
   display: flex;
