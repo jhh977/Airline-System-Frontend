@@ -1,12 +1,12 @@
 // Function to fetch and load trip details from the database
 async function loadTripDetails() {
     try {
-        const response = await fetch('http://your-api-endpoint/trip-details', {
-            method: 'POST',  // Changed to POST method
+        const response = await fetch('http://localhost/Airline-System-Backend/public/api/bookings/details', {
+            method: 'GET',  
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                
             },
-            body: JSON.stringify({ user_id: 2 })  // Assuming you need to send a user ID or other parameters
         });
 
         if (!response.ok) {
@@ -14,19 +14,19 @@ async function loadTripDetails() {
         }
 
         const data = await response.json();
+        const booking = data.response; // Accessing the booking data within the response
 
         // Populate HTML with the data
-        document.querySelector('.trip-details .departure-from p').textContent = `Depart ${data.departure.location} ${data.departure.time}`;
-        document.querySelector('.trip-details .departure-to p').textContent = `Arrive ${data.arrival.location} ${data.arrival.time}`;
+        document.querySelector('.trip-details .departure-from p').textContent = `Depart ${booking.departure_location} at ${booking.departure_time}`;
+        document.querySelector('.trip-details .departure-to p').textContent = `Arrive ${booking.arrival_location} at ${booking.arrival_time}`;
         
-        document.querySelector('.trip-details .plane-departure:nth-of-type(2) .departure-from p').textContent = `Depart ${data.returnDeparture.location} ${data.returnDeparture.time}`;
-        document.querySelector('.trip-details .plane-departure:nth-of-type(2) .departure-to p').textContent = `Arrive ${data.returnArrival.location} ${data.returnArrival.time}`;
+        document.querySelector('.hotel-taxi-details .departure-from:nth-of-type(1) p').textContent = `Check-in ${booking.checkin_date}`;
+        document.querySelector('.hotel-taxi-details .departure-to:nth-of-type(1) p').textContent = `Check-out ${booking.checkout_date}`;
         
-        document.querySelector('.hotel-taxi-details .departure-from:nth-of-type(1) p').textContent = `Check-in ${data.hotel.checkin}`;
-        document.querySelector('.hotel-taxi-details .departure-to:nth-of-type(1) p').textContent = `Check-out ${data.hotel.checkout}`;
+        document.querySelector('.hotel-taxi-details .departure-from:nth-of-type(2) p').textContent = `Pickup from ${booking.pickup_location} at ${booking.pickup_time}`;
+        document.querySelector('.hotel-taxi-details .departure-to:nth-of-type(2) p').textContent = `Dropoff at ${booking.dropoff_location} at ${booking.dropoff_time}`;
         
-        document.querySelector('.hotel-taxi-details .departure-from:nth-of-type(2) p').textContent = `Pickup ${data.taxi.pickup}`;
-        document.querySelector('.hotel-taxi-details .departure-to:nth-of-type(2) p').textContent = `Dropoff ${data.taxi.dropoff}`;
+        document.querySelector('.total-price').textContent = `Total Price: $${data.total_price}`;
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }

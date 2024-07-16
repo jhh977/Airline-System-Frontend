@@ -184,6 +184,11 @@ body{
     text-decoration: none;
     margin-bottom: 10px;
 }
+.plane-details{
+    display: flex;
+    flex-direction: column;
+}
+
 
 @media screen and (max-width: 1067px) {
     .container{
