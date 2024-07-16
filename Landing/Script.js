@@ -13,3 +13,17 @@ herroSection.addEventListener('mousemove', (e) => {
 herroSection.addEventListener('mouseleave', () => {
   airplaneImage.style.transform = `translate(-50%, -50%)`; // Reset position on mouse leave
 });
+
+
+const login = document.getElementById('login-btn');
+login.addEventListener('click', function() {
+    window.location.href = '../Login/Signup/login-signup.html';
+});
+
+document.addEventListener('DOMContentLoaded',()=>{
+  const uID = localStorage.getItem('userID');
+  console.log(uID);
+  if (typeof uID !== 'undefined') {
+    login.style.display='none';
+  }
+})

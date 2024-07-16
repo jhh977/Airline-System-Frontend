@@ -2,6 +2,7 @@ document.querySelector(".img__btn").addEventListener("click", function () {
   document.querySelector(".cont").classList.toggle("s--signup");
 });
 
+let userID ;
 document.addEventListener("DOMContentLoaded", function () {
   const img = document.querySelector(".airplane-image img");
 
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function fetchLoginApi(email, password) {
-    try {
+    
       const res = await fetch(
         "http://localhost/Airline-System-Backend/public/api/login",
         {
@@ -74,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       const data = await res.json();
+      console.log(data);
+      console.log("message",data.message);
+      localStorage.setItem('userID', data.userID);
+      console.log("userID",data.userID);
       switch (data.message) {
         case "Email and password are required.":
           showPopup("Can't have empty fields");
@@ -85,9 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
           showPopup("Welcome to our website");
           return true;
       }
-    } catch (error) {
-      console.error("Error:", error);
-    }
   }
 
   function sanitizeSignInForm() {
@@ -112,9 +114,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (fetchLoginApi(email, password)) {
-      showPopup("go to landing page");
+      //showPopup("go to landing page");
       document.getElementById("signInEmail").value = "";
       document.getElementById("signInPassword").value = "";
+      window.location.href = '../../Landing/index.html';
     }
   }
 
@@ -169,40 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error:", error);
     }
   }
-  /* 
-async function fetchSignupApi(name, email, password, phoneNumber) {
-    try {
-        // Construct the query string
-        const queryString = new URLSearchParams({
-            name: name,
-            email: email,
-            password: password,
-            phoneNumber: phoneNumber
-        }).toString();
-
-        // Send a GET request with query parameters
-        const res = await fetch(`http://localhost/Airline-System-Backend/public/api/register?${queryString}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
-
-        // Log the response for debugging
-        console.log(res);
-
-        if (!res.ok) {
-            throw new Error(`HTTP error! status: ${res.status}`);
-        }
-
-        // Parse and log the response data
-        const data = await res.json();
-        console.log("Data received after success:", data);
-
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}*/
 
   function sanitizeSignUpForm() {
     let name = sanitizeInput(document.getElementById("signUpName").value);
@@ -257,9 +226,6 @@ async function fetchSignupApi(name, email, password, phoneNumber) {
       return;
     }
 
-    //showPopup('Sign Up Form is valid');
-    // You can proceed with form submission or further processing
-    //console.log(name,"====",email,"====",password,"====",phoneNumber,"====");
     if (fetchSignupApi(name, email, password, phoneNumber)) {
       document.getElementById("signUpName").value = "";
       document.getElementById("signUpEmail").value = "";
