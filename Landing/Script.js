@@ -24,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const login = document.querySelector("#login"); // Assuming there is an element with the ID 'login'
 
   if (uID !== null) {
-    login.style.display = "none";
-    // } else {
-    // login.style.display = "inline";
+      login.style.display = "none";
+     } else {
+      login.style.display = "inline";
   }
 });
 
