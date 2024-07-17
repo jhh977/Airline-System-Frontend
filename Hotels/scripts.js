@@ -117,3 +117,5 @@ function sanitizeInput(input) {
 function showPopup(message) {
   alert(message);
 }
+
+const book = document.getElementById("");

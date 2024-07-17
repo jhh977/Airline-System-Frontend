@@ -75,7 +75,40 @@
         <button class="view-take">Book</button>
       </div>
     </section>
+    <section id="check-form" class="hidden" class="Location">
+      <div class="container1">
+        <h1>Book Your Hotel</h1>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="company-name">Company Name:</label>
+            <span id="Company-name"> ${from} </span>
+          </div>
 
+          <div class="form-group">
+            <label for="checkIn">City:</label>
+            <span id="checkIn">${City}</span>
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check In:</label>
+            <span id="checkOut"> ${Date} </span>
+          </div>
+          <div class="form-group">
+            <label for="checkOut">Check Out:</label>
+            <span id="checkOut"> ${Date} </span>
+          </div>
+          <div class="form-group">
+            <label for="travelClass">Price</label>
+            <span id="travelClass"> ${Price} </span>
+          </div>
+          <div class="button-group">
+            <button type="submit" id="checkAvailability">
+              Check Availability
+            </button>
+            <button type="button" id="cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </section>
     <script src="scripts.js"></script>
   </body>
 </html>

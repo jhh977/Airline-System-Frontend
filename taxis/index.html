@@ -35,71 +35,17 @@
         <label for=""></label>
       <input type="text" id="searchText" placeholder="Search by City...." />
 
-      <input type="number" id="guests" placeholder="Number of Guests" />
-      <button class="search" id="search">
+      
+      <button class="search search_btn" id="search">
         <i class="fa-solid fa-magnifying-glass"></i>
         Search
       </button>
     </form>
     
         <div class="all-cards">
-                        <div class="card">
-                                <div class="card-image">
-                                        <img src="image.jpg" alt="Image" />
-                                </div>
-                                
-                                <div class="card-details">
-                                        <div class= "info">
-                                                <div class="column">
-                                                        <span id="label">Company Name:   </span>
-                                                        <span id="label">Location:   </span>
-                                                        <span id="label">Location:   </span>
-                                                        <span id="label">Price per Hour:   </span>
-                                                </div>
-                                                <div class="column">
-                                                        <span class="value" id="label" placeholder="companyname">companyname</span>
-                                                        <input class="value" id="location" placeholder="pickup"></input>
-                                                        <input class="value" id="location" placeholder="drop"></input>
-                                                        <span class="value" id="price-per-hour">price-per-hour</span>
-                                                        
-                                                </div>
-                                </div>
-                                
-                                <button class="take-button">Book</button>
-                        </div>
-                </div>
-        </div>
+        </div> 
     </section>
-    <Section id="check-form" class="" class="Location">
-        <div class="container">
-          <h1>Book Your Taxi</h1>
-          <form id="bookingForm">
-            <div class="form-group">
-              <label for="company-name">Company Name:</label>
-              <span id="Company-name"> ${from} </span>
-            </div>
-            
-            <div class="form-group">
-              <label for="checkIn">From:</label>
-              <span id="checkIn">${pick up}</span>
-            </div>
-            <div class="form-group">
-              <label for="checkOut">To:</label>
-              <span id="checkOut"> ${Drop} </span>
-            </div>
-            <div class="form-group">
-              <label for="travelClass">Price</label>
-              <span id="travelClass"> ${Price} </span>
-            </div>
-            <div class="button-group">
-              <button type="submit" id="checkAvailability">
-                Check Availability
-              </button>
-              <button type="button" id="cancel">Cancel</button>
-            </div>
-          </form>
-        </div>
-      </Section>
+   
     <script src="scripts.js"></script>
   </body>
 </html>
