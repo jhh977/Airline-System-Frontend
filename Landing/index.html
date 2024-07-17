@@ -118,52 +118,6 @@
           <button id="book">Book</button>
         </div>
       </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/38148928.jpg?k=76965aaa0792e783dc339a69174311f356c3079bb84691aac3363764b32885c2&o=&hp=1"width=330px height=150px alt="Image" />
-        </div>
-
-        <div class="card-details">
-          <div class="info">
-            <div class="column">
-              <span class="label" id="from">From</span>
-              <span class="label" id="to">To</span>
-              <span class="label" id="date">Date</span>
-              <span class="label" id="price">price</span>
-            </div>
-            <div class="column">
-              <span class="value" id="from-value">Lebanon</span>
-              <span class="value" id="to-value">Egypt</span>
-              <span class="value" id="date-value">Aug-1-2024</span>
-              <span class="value" id="price-value">1000$</span>
-            </div>
-          </div>
-          <button id="book">Book</button>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-image">
-          <img src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/38148928.jpg?k=76965aaa0792e783dc339a69174311f356c3079bb84691aac3363764b32885c2&o=&hp=1"width=330px height=150px alt="Image" />
-        </div>
-
-        <div class="card-details">
-          <div class="info">
-            <div class="column">
-              <span class="label" id="from">From</span>
-              <span class="label" id="to">To</span>
-              <span class="label" id="date">Date</span>
-              <span class="label" id="price">price</span>
-            </div>
-            <div class="column">
-              <span class="value" id="from-value">Lebanon</span>
-              <span class="value" id="to-value">Egypt</span>
-              <span class="value" id="date-value">Aug-1-2024</span>
-              <span class="value" id="price-value">1000$</span>
-            </div>
-          </div>
-          <button id="book">Book</button>
-        </div>
-      </div>
     </section>
     <div class="upper">
       <h1>Reach Our Team</h1>
@@ -223,4 +177,37 @@
       </div>
     </div>
   </footer>
+  <Section id="check-form" class="hidden">
+    <div class="container">
+      <h1>Book Your Flight</h1>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="flyingFrom">Flying From:</label>
+          <span id="flyingFrom"> ${from} </span>
+        </div>
+        <div class="form-group">
+          <label for="flyingTo">Flying To:</label>
+          <span id="flyingTo"> ${To}</span>
+        </div>
+        <div class="form-group">
+          <label for="checkIn">Check In:</label>
+          <span id="checkIn"> Date </span>
+        </div>
+        <div class="form-group">
+          <label for="checkOut">Check Out:</label>
+          <span id="checkOut"> Date </span>
+        </div>
+        <div class="form-group">
+          <label for="travelClass">Travel Class:</label>
+          <span id="travelClass"> [Input Here] </span>
+        </div>
+        <div class="button-group">
+          <button type="submit" id="checkAvailability">
+            Check Availability
+          </button>
+          <button type="button" id="cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </Section>
 </html>

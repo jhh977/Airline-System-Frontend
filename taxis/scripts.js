@@ -13,25 +13,22 @@ function updateTaxiListing(taxis) {
                                 </div>
                                 
                                 <div class="card-details">
-                                        <div class= "info">
-                                                <div class="column">
-                                                        <span id="label">Company Name:   </span>
-                                                        <span id="label">Location:   </span>
-                                                        <span id="label">Location:   </span>
-                                                        <span id="label">Price per Hour:   </span>
-                                                       
-                                                        
-                                                </div>
-                                                <div class="column">
-                                                        <span class="value" id="label" placeholder="companyname">${taxi.name}</span>
-                                                        <input class="value" id="location" placeholder="pickup"></input>
-                                                        <input class="value" id="location" placeholder="drop"></input>
-                                                        <span class="value" id="price-per-hour">${taxi.price}</span>
-                                                        
-                                                </div>
+                                    <div class= "info">
+                                            <div class="column">
+                                             <span id="label">Company Name:   </span>
+                                             <span id="label">Location:   </span>
+                                             <span id="label">Location:   </span>
+                                             <span id="label">Price per Hour:   </span>      
+                                     </div>
+                                     <div class="column">
+                                             <span class="value" id="label" placeholder="companyname">${taxi.name}</span>
+                                             <input class="value" id="location" placeholder="pickup"></input>
+                                             <input class="value" id="location" placeholder="drop"></input>
+                                             <span class="value" id="price-per-hour">${taxi.price}</span>
+                                      </div>
                                 </div>
                                 
-                                <button class="take-button">Take</button>
+                                <button class="take-button">Book</button>
                         </div>
                 </div>
     `;
@@ -46,6 +43,18 @@ function sanitizeInput(text) {
 function showPopup(message) {
   alert(message);
 }
+const takeButtons = document.querySelectorAll(".take-button");
+
+// Loop through each button to add event listener
+takeButtons.forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Find the parent card element and remove it
+    const card = button.closest(".card");
+    if (card) {
+      card.remove();
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const searchButton = document.getElementById("search");
