@@ -88,7 +88,8 @@ const generateResponse = async (userMessage, chatElement) => {
         console.log(data.response);
         if (data.response) {
             // Update the message element with the response
-            chatElement.textContent = data.response;
+            chatElement.textContent = "";
+            chatbox.appendChild(createChatLi(data.response, 'incoming'));
         } else {
             throw new Error("No response from the server.");
         }
