@@ -21,10 +21,14 @@ login.addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", () => {
   const uID = localStorage.getItem("userID");
-  console.log(uID);
-  if (typeof uID !== "undefined") {
+  const login = document.querySelector("#login"); // Assuming there is an element with the ID 'login'
+
+  if (uID !== null) {
     login.style.display = "none";
-  } else {
-    login.style.display = "inline";
+    // } else {
+    // login.style.display = "inline";
   }
 });
+
+const user = localStorage.getItem("userID");
+console.log(user);
