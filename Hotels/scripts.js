@@ -39,7 +39,7 @@ function updateHotelListings(hotels) {
         <img
           src="${hotel.hotel_image_url}"
           alt="${hotel.name}"
-          class="image"
+          class="image" 
         />
 
         <div class="info">
@@ -60,7 +60,7 @@ function updateHotelListings(hotels) {
           </div>
         </div>
 
-        <button class="view-take">Take</button>
+        <button class="view-take">Book</button>
       </div>
     `;
 
