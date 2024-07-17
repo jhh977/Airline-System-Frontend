@@ -5,7 +5,6 @@ async function loadTripDetails() {
             method: 'GET',  
             headers: {
                 'Content-Type': 'application/json',
-                
             },
         });
 
@@ -17,16 +16,20 @@ async function loadTripDetails() {
         const booking = data.response; // Accessing the booking data within the response
 
         // Populate HTML with the data
-        document.querySelector('.trip-details .departure-from p').textContent = `Depart ${booking.departure_location} at ${booking.departure_time}`;
-        document.querySelector('.trip-details .departure-to p').textContent = `Arrive ${booking.arrival_location} at ${booking.arrival_time}`;
+        document.querySelector('#departure-from p').textContent = `Depart ${booking.departure_location} at ${booking.departure_time}`;
+        document.querySelector('#departure-to p').textContent = `Arrive ${booking.arrival_location} at ${booking.arrival_time}`;
         
-        document.querySelector('.hotel-taxi-details .departure-from:nth-of-type(1) p').textContent = `Check-in ${booking.checkin_date}`;
-        document.querySelector('.hotel-taxi-details .departure-to:nth-of-type(1) p').textContent = `Check-out ${booking.checkout_date}`;
+        document.querySelector('#hotel-from p').textContent = `Check-in ${booking.checkin_date}`;
+        document.querySelector('#hotel-to p').textContent = `Check-out ${booking.checkout_date}`;
         
-        document.querySelector('.hotel-taxi-details .departure-from:nth-of-type(2) p').textContent = `Pickup from ${booking.pickup_location} at ${booking.pickup_time}`;
-        document.querySelector('.hotel-taxi-details .departure-to:nth-of-type(2) p').textContent = `Dropoff at ${booking.dropoff_location} at ${booking.dropoff_time}`;
+        document.querySelector('#taxi-from p').textContent = `Pickup from ${booking.pickup_location} at ${booking.pickup_time}`;
+        document.querySelector('#taxi-to p').textContent = `Drop-off at ${booking.dropoff_location} at ${booking.dropoff_time}`;
+
+        document.querySelector('#plane-date').textContent=`${booking.flight_date}`
+        document.querySelector('#hotel-date').textContent=`${booking.checkin_date}`
+        document.querySelector('#taxi-date').textContent=`${booking.checkin_date}`
         
-        document.querySelector('.total-price').textContent = `Total Price: $${data.total_price}`;
+        document.querySelector('#total-price').textContent = `$${data.total_price}`;
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
@@ -36,13 +39,13 @@ async function loadTripDetails() {
 async function bookTrip(event) {
     event.preventDefault();
 
-    const cardNumberInputs = document.querySelectorAll('.card-number input');
+    const cardNumberInputs = document.querySelectorAll('#card-number input');
     const cardNumber = Array.from(cardNumberInputs).map(input => input.value).join('');
 
-    const nameOnCard = document.querySelector('.name-on-the-card input').value;
-    const expiryDateInputs = document.querySelectorAll('.expiary-date-inputs input');
-    const expiryDate = Array.from(expiryDateInputs).map(input => input.value).join('/');
-    const cvv = document.querySelector('.CVV-input input').value;
+    const nameOnCard = document.querySelector('#name-on-card').value;
+    const expiryDateInputs = document.querySelectorAll('#expiry-date-inputs input');
+    const expiryDate = `${expiryDateInputs[0].value}/${expiryDateInputs[1].value}`;
+    const cvv = document.querySelector('#cvv').value;
 
     const bookingDetails = {
         cardNumber,
@@ -76,7 +79,7 @@ async function bookTrip(event) {
 }
 
 // Event listener for the booking button
-document.querySelector('.order-button').addEventListener('click', bookTrip);
+document.querySelector('#book-trip-button').addEventListener('click', bookTrip);
 
 // Load trip details when the page loads
 document.addEventListener('DOMContentLoaded', loadTripDetails);

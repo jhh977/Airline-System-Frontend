@@ -8,123 +8,133 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div class="trip-details">
-            <div class="trip-details-text">
+    <div class="container" id="container">
+        <div class="trip-details" id="trip-details">
+            <div class="trip-details-text" id="trip-details-text">
+                <div class="dep">
                 <h1>Trip Details</h1>
             </div>
-            <div class="plane-details">
-                <h3>Departure</h3>
-                <div class="plane-departure">
-                    <div class="departure-date"><p>FEB<br> 09</p> </div>
-                    <div class="departure-from-to">
-                        <div class="departure-from">
-                            <i class="fa-solid fa-plane fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
+            <div class="plane-details" id="plane-details">
+                
+                    <h3>Departure</h3>
+                    <div class="plane-departure" id="departure-details">
+                        <div class="departure-date" id="departure-date">
+                            <p id="plane-date" class="dates">Feb09</p>
                         </div>
-                        <div class="departure-to">
-                            <i class="fa-solid fa-plane fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
-                        </div>
-                    </div>
-                </div>
-                <h3>Return</h3>
-                <div class="plane-departure">
-                    <div class="departure-date"><p>FEB<br> 09</p> </div>
-                    <div class="departure-from-to">
-                        <div class="departure-from">
-                            <i class="fa-solid fa-plane fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
-                        </div>
-                        <div class="departure-to">
-                            <i class="fa-solid fa-plane fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
+                        <div class="departure-from-to" id="departure-from-to">
+                            <div class="departure-from" id="departure-from">
+                                <i class="fa-solid fa-plane fa-2x"></i>
+                                <p>Depart Denver 1:00 PM</p>
+                            </div>
+                            <div class="departure-to" id="departure-to">
+                                <i class="fa-solid fa-plane fa-2x"></i>
+                                <p>Arrive Denver 3:00 PM</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="hotel-taxi-details">
-                <h3>Hotel</h3>
-                <div class="plane-departure">
-                    <div class="departure-date"><p>FEB<br> 09</p> </div>
-                    <div class="departure-from-to">
-                        <div class="departure-from">
-                            <i class="fa-solid fa-bed fa-2x"></i>
+                <!--
+                <h3>Return</h3>
+                <div class="plane-departure" id="return-details">
+                    <div class="departure-date" id="return-date">
+                        <p>FEB<br> 09</p>
+                    </div>
+                    <div class="departure-from-to" id="return-from-to">
+                        <div class="departure-from" id="return-from">
+                            <i class="fa-solid fa-plane fa-2x"></i>
                             <p>Depart Denver 1:00 PM</p>
                         </div>
-                        <div class="departure-to">
+                        <div class="departure-to" id="return-to">
+                            <i class="fa-solid fa-plane fa-2x"></i>
+                            <p>Arrive Denver 3:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            
+            <div class="hotel-taxi-details" id="hotel-taxi-details">
+                <h3>Hotel</h3>
+                <div class="plane-departure" id="hotel-details">
+                    <div class="departure-date" id="hotel-date">
+                        <p id="hotel-date" class="dates">Feb09</p>
+                    </div>
+                    <div class="departure-from-to" id="hotel-from-to">
+                        <div class="departure-from" id="hotel-from">
                             <i class="fa-solid fa-bed fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
+                            <p>Check-in: 3:00 PM</p>
+                        </div>
+                        <div class="departure-to" id="hotel-to">
+                            <i class="fa-solid fa-bed fa-2x"></i>
+                            <p>Check-out: 11:00 AM</p>
                         </div>
                     </div>
                 </div>
 
-                <h3>Taxis</h3>
-                <div class="plane-departure">
-                    <div class="departure-date"><p>FEB<br> 09</p> </div>
-                    <div class="departure-from-to">
-                        <div class="departure-from">
+                <h3>Taxi</h3>
+                <div class="plane-departure" id="taxi-details">
+                    <div class="departure-date" id="taxi-date">
+                        <p id="hotel-date" class="dates">Feb09</p>
+                    </div>
+                    <div class="departure-from-to" id="taxi-from-to">
+                        <div class="departure-from" id="taxi-from">
                             <i class="fa-solid fa-taxi fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
+                            <p>Pickup at 1:00 PM</p>
                         </div>
-                        <div class="departure-to">
+                        <div class="departure-to" id="taxi-to">
                             <i class="fa-solid fa-taxi fa-2x"></i>
-                            <p>Depart Denver 1:00 PM</p>
+                            <p>Drop-off at 2:00 PM</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-            
-
-        <div class="payment-details">
-            <div class="payment-details-container">
-                <div class="payment">
+        <div class="payment-details" id="payment-details">
+            <div class="payment-details-container" id="payment-details-container">
+                <div class="payment" id="payment-info">
                     <i class="fa-solid fa-credit-card fa-2x"></i>
                     <h1>Payment</h1>
                 </div>
                 <h2>Card Number</h2>
-                <div class="card-number">
-                    <input class="line-input" type="number"/>
-                    <input class="line-input" type="number"/>
-                    <input class="line-input" type="number"/>
-                    <input class="line-input" type="number"/>
+                <div class="card-number" id="card-number">
+                    <input class="line-input" type="number" id="card-number-1"/>
+                    <input class="line-input" type="number" id="card-number-2"/>
+                    <input class="line-input" type="number" id="card-number-3"/>
+                    <input class="line-input" type="number" id="card-number-4"/>
                 </div>
                 <br>
-                <div class="name-on-the-card">
+                <div class="name-on-the-card" id="name-on-the-card">
                     <h2>Name On The Card</h2>
-                    <input class="line-input" type="text" style="width: 90%;"/>
+                    <input class="line-input" type="text" style="width: 90%;" id="name-on-card"/>
                 </div>
-                <div class="expiary-date-CVV">
-                    <h2>Expiary Date</h2>
+                <div class="expiary-date-CVV" id="expiary-date-cvv">
+                    <h2>Expiry Date</h2>
                     <h2>CVV</h2>
                 </div>
 
-                <div class="expiary-date-CVV-inputs">
-                    <div class="expiary-date-inputs">
-                        <input class="line-input" type="text"/>
-                        <input class="line-input" type="text"/>
+                <div class="expiary-date-CVV-inputs" id="expiary-date-cvv-inputs">
+                    <div class="expiary-date-inputs" id="expiry-date-inputs">
+                        <input class="line-input" type="text" id="expiry-month" placeholder="MM"/>
+                        <input class="line-input" type="text" id="expiry-year" placeholder="YY"/>
                     </div>
-                    <div class="CVV-input">
-                        <input class="line-input" type="text"/>
+                    <div class="CVV-input" id="cvv-input">
+                        <input class="line-input" type="text" id="cvv" placeholder="CVV"/>
                     </div>
                 </div>
                 <br>
-                <div class="order-comfirm">
-                    <div class="order-text">
+                <div class="order-comfirm" id="order-confirm">
+                    <div class="order-text" id="order-text">
                         <p>Booking Total:</p>
-                        <p>$399.00</p>
+                        <p id="total-price">$399.00</p>
                     </div>
-                    <button class="order-button">
+                    <button class="order-button" id="book-trip-button">
                         Book Trip
                     </button>
                 </div>
             </div>
         </div>
     </div>
-
 
 <script src="script.js"></script>
 </body>

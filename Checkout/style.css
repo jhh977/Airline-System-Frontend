@@ -3,12 +3,17 @@ body{
     overflow: hidden;
 }
 
+
 .container{
     margin: 40px 65px 40px 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 90vh;
+}
+.dep{
+    display: flex;
+    align-items: center;
 }
 .trip-details{
     width: 60vw;
@@ -36,14 +41,21 @@ body{
     flex-direction: row;
 }
 
+#taxi-date{
+    font-size: 20px;
+}
 .departure-from-to{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .departure-date{
     color: #fff;
     border: 1px solid #0050FF;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 .departure-date p {
     font-size: 30px;
