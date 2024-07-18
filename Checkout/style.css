@@ -1,0 +1,258 @@
+body{
+    background-color: #0050FF;
+    overflow: hidden;
+}
+
+
+.container{
+    margin: 40px 65px 40px 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90vh;
+}
+.dep{
+    display: flex;
+    align-items: center;
+}
+.trip-details{
+    width: 60vw;
+    background-color: #22437D;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 1;
+}
+.trip-details-text{
+    color: #fff;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding-left: 20px;
+}
+ h3 {
+    color: #fff;
+    padding-left: 40px;
+}
+
+.plane-departure{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+#taxi-date{
+    font-size: 20px;
+}
+.departure-from-to{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.departure-date{
+    color: #fff;
+    border: 1px solid #0050FF;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.departure-date p {
+    font-size: 30px;
+}
+
+.departure-from{
+    padding-left: 20px;
+    display: flex;
+    border: 1px solid #0050FF;
+}
+.departure-from-to p {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+.fa-plane{
+    color: #FBAD06;
+    padding-top: 25px;
+}
+.fa-bed{
+    color: #FBAD06;
+    padding-top: 25px;
+}
+.fa-taxi{
+    color: #FBAD06;
+    padding-top: 25px;
+}
+
+.fa-credit-card{
+    color: #4a4948;
+    padding-top: 25px;
+}
+
+.departure-to{
+    padding-left: 20px;
+    display: flex;
+    border: 1px solid #0050FF;
+}
+.departure-to p {
+    padding-left: 20px;
+    color: #fff;
+}
+
+.hotel-taxi-details{
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.payment-details{
+    background-color: #fff;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment{
+    display: flex;
+}
+.payment h1{
+    padding-left: 20px;
+}
+.payment h1{
+    display: flex;
+}
+
+.card-number{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.line-input {
+    border: none; /* Remove all borders */
+    border-bottom: 1px solid black; /* Add a bottom border */
+    background: none; /* Remove background */
+    outline: none; /* Remove outline when focused */
+    width: 20%; /* Optional: Make it take the full width of its container */
+    padding: 5px 0; /* Optional: Add some padding */
+    font-size: 16px; /* Optional: Adjust font size */
+}
+.payment-details-container{
+    padding-left: 40px;
+    
+}
+
+.expiary-date-CVV{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiary-date-CVV-inputs{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiary-date-inputs{
+    display: inline;
+    justify-content: flex-start;
+}
+.CVV-input{
+    display: flex;
+    justify-content: flex-end;
+    width: 50vw;
+}
+
+.payment-details h1,
+.payment-details h2 {
+    color: #2257FD;
+}
+
+.order-comfirm{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+.order-text{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.order-button {
+    background-color: #FDB800;
+    color: #fff;
+    padding: 10px 20px; 
+    border: 2px solid #333; 
+    border-radius: 5px; 
+    font-size: 16px; 
+    text-align: center; 
+    display: inline-block; 
+    cursor: pointer; 
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.plane-details{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Add this to your styles.css */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: none;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #close-popup {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #close-popup:hover {
+    background-color: #0056b3;
+  }
+
+
+@media screen and (max-width: 1067px) {
+    .container{
+        flex-direction: column;
+    }
+    .plane-departure{
+        flex-direction: column;
+        
+    }
+    body{
+        overflow: auto;
+    }
+    .payment-details{
+        width: 80vw;
+    }
+    .trip-details{
+        width: 80vw;
+    }
+}

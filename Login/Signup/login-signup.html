@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>login-signup</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <div class="sky-image"><img src="../../Assets/Images/sky-pic.jpg" alt="airplane" width="600px"></div>
+            <div class="airplane-image"><img src="../../Assets/Images/airplane-removebg-preview.png" alt="airplane" width="600px"></div>
+        </div>
+        <div class="sub-cont">
+            <div class="img" >
+                <div class="img__text m--up">      
+                    <div><h3>Welcome<h3></h3></div>
+                    <div class="email-password">
+                        <label>
+                            <div class="input-icon">
+                                <span class="text-span">Email</span>
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <input type="email" id="signInEmail"/>
+                        </label>
+                        <label>
+                            <div class="input-icon">
+                                <span class="text-span">Password</span>
+                                <i class="fa-solid fa-eye-slash passwordToggleClass" id="signInpasswordToggle"></i>
+                            </div>
+                            <input type="password" id="signInPassword" />
+                        </label>
+                    </div>
+                    <p class="forgot-pass" style="font-size: 10px;">Forgot password?</p>
+                    <button type="button" class="submit" id="signInButton">Sign In</button> 
+                    <p>Don't have an account ?</p>              
+                </div>
+                <div class="img__text m--in">
+                    <h3>If you already have an account, just sign in.<h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <h2>Create your Account</h2>
+                <label>
+                    <div class="input-icon">
+                        <span>Name</span>
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <input class="signup-input" type="text" id="signUpName"/>
+                </label>
+                <label>
+                    <div class="input-icon">
+                        <span>Email</span>
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <input class="signup-input" type="email" id="signUpEmail"/>
+                </label>
+                <label>
+                    <div class="input-icon">
+                        <span>Password</span>
+                        <i class="fa-solid fa-eye-slash passwordToggleClass" id="signUpPasswordToggle1"></i>
+                    </div>
+                    <input class="signup-input" type="password" id="signUpPassword"/>
+                </label>
+                <label>
+                    <div class="input-icon">
+                        <span>Confirm Password</span>
+                        <i class="fa-solid fa-eye-slash passwordToggleClass" id="signUpPasswordToggle2"></i>
+                    </div>
+                    <input class="signup-input" type="password" id="signUpConfirmPassword"/>
+                </label>
+                <label>
+                    <div class="input-icon">
+                        <span>Phone Number</span>
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <input class="signup-input" type="text" id="signUpPhoneNumber" placeholder="+961 XXXXXXXX"/>
+                </label>
+                <button type="button" class="submit" id="signUpButton">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="popup" class="popup hidden">
+        <div class="popup-content">
+            <span id="popup-message"></span>
+            <button id="close-popup">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

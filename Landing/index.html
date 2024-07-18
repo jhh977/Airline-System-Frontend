@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo"> <i class="fa-solid fa-plane fa-1x"></i></div>
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../taxis/index.html">Taxis</a></li>
+            <li><a href="../Hotels/index.html">Hotels</a></li>
+            <li><a href="../Chatbot/index.html">ChatBot</a></li>
+           
+          </ul>
+        </nav>
+        <div class="login-icon">
+          <button class="login-btn" id="login-btn">Login</button>
+          <i class="fa-solid fa-user fa-2x"></i>
+        </div>
+      </div>
+    </header>
+
+    <section class="herro-section">
+      <div class="sky-image">
+        <img src="../Assets/Images/sky-pic.jpg" alt="airplane" width="600px" />
+      </div>
+      <div class="airplane-image">
+        <img
+          src="../Assets/Images/airplane-removebg-preview.png"
+          alt="airplane"
+          width="600px"
+        />
+      </div>
+    </section>
+    <section class="container">
+      <div class="title">
+        <h1>Millions of Cheap Flights. One Simple Search</h1>
+      </div>
+
+      <div class="all-forms">
+        <div class="form-group">
+          <label for="from">From:</label>
+          <input
+            type="text"
+            id="from"
+            name="from"
+            placeholder="Enter departure city"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="to">To:</label>
+          <input
+            type="text"
+            id="to"
+            name="to"
+            placeholder="Enter destination city"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="travellers">Travellers:</label>
+          <input
+            type="number"
+            id="travellers"
+            name="travellers"
+            min="1"
+            placeholder="Number of travellers"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="class">Class:</label>
+          <select id="class" name="class">
+            <option value="economy">Economy</option>
+            <option value="business">Business</option>
+            <option value="first">First</option>
+          </select>
+        </div>
+        <button class="search-btn">Search</button>
+      </div>
+    </section>
+    <section class="all-cards">
+      <div class="card">
+        <div class="card-image">
+          <img src="https://cf2.bstatic.com/xdata/images/hotel/max1024x768/38148928.jpg?k=76965aaa0792e783dc339a69174311f356c3079bb84691aac3363764b32885c2&o=&hp=1"width=330  px height=150px alt="Image" />
+        </div>
+
+        <div class="card-details">
+          <div class="info">
+            <div class="column">
+              <span class="label" id="from">From</span>
+              <span class="label" id="to">To</span>
+              <span class="label" id="date">Date</span>
+              <span class="label" id="price">price</span>
+            </div>
+            <div class="column">
+              <span class="value" id="from-value">Lebanon</span>
+              <span class="value" id="to-value">Egypt</span>
+              <span class="value" id="date-value">Aug-1-2024</span>
+              <span class="value" id="price-value">1000$</span>
+            </div>
+            
+          </div>
+          <button id="book">Book</button>
+        </div>
+      </div>
+    </section>
+    <div class="upper">
+      <h1>Reach Our Team</h1>
+      <h3>
+        We love questions and feedback and we’re always happy to help here are
+        some way to contact us
+      </h3>
+    </div>
+    <div class="support-info">
+        <div class="box-support" id="left">
+          <h4>Contact Customer Support</h2>
+          <p>We are waiting to help you and your. Dont hesitate to reach out !</p>
+          <button class="contact-button">Contact Support</button>
+        </div>
+        <div class="box-support" id="right">
+          <h4>Contact Customer Support</h2>
+          <p>We are waiting to help you and your. Dont hesitate to reach out !</p>
+          <button class="contact-button">Contact Support</button>
+        </div>
+  </div>
+    <script src="Script.js"></script>
+  </body>
+  <footer class="footer">
+
+    <div class="footer-links">
+      <div class="footer-logo">
+        <i class="fa-solid fa-plane fa-4x" style="color: #fff; padding-top: 10px;"></i>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li><h5>Company</h5></li>
+          <li>About</li>
+          <li>Features</li>
+          <li>Our Work</li>
+          <li>Carear</li>
+       </ul>
+      </div>
+      <div class="footer-column">
+        <ul>
+          <li><h5>Resource</h5></li>
+          <li>Our Vesion</li>
+          <li>Blogs</li>
+          <li>Contact Us</li>
+          <li>Categories</li>
+         
+        </ul>
+      </div>
+      <div class="footer-column">
+        
+        <ul>
+          <li><h5>Help</h5></li>
+          <li>Customer Suppor</li>
+          <li>Team</li>
+          <li>Status</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <Section id="check-form" class="hidden">
+    <div class="container">
+      <h1>Book Your Flight</h1>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="flyingFrom">Flying From:</label>
+          <span id="flyingFrom"> ${from} </span>
+        </div>
+        <div class="form-group">
+          <label for="flyingTo">Flying To:</label>
+          <span id="flyingTo"> ${To}</span>
+        </div>
+        <div class="form-group">
+          <label for="checkIn">Arrival Time:</label>
+          <span id="checkIn"> Date </span>
+        </div>
+        <div class="form-group">
+          <label for="checkOut">Departure Time:</label>
+          <span id="checkOut"> Date </span>
+        </div>
+        <div class="form-group">
+          <label for="travelClass">Price:</label>
+          <span id="travelClass"> ${price}</span>
+        </div>
+        <div class="button-group">
+          <button type="submit" id="checkAvailability">
+            Book
+          </button>
+          <button type="button" id="cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </Section>
+</html>
