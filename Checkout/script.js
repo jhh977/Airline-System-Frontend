@@ -1,3 +1,11 @@
+function showPopup(message) {
+    const popup = document.getElementById("popup");
+    const popupMessage = document.getElementById("popup-message");
+    popupMessage.textContent = message;
+    popup.classList.remove("hidden");
+    popup.style.display = "block";
+  }
+
 // Function to fetch and load trip details from the database
 async function loadTripDetails() {
     try {
@@ -54,8 +62,8 @@ async function bookTrip(event) {
         cvv
     };
 
-    try {
-        const response = await fetch('http://your-api-endpoint/book-trip', {
+   // try {
+        const response = await fetch('http://localhost/Airline-System-Backend/public/api/bookings/checkout', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -69,13 +77,17 @@ async function bookTrip(event) {
 
         const result = await response.json();
         
-        // Show a popup message
-        alert(`Booking successful! Confirmation number: ${result.confirmationNumber}`);
+        if(result.message==="User paid, all saved in payment table now" && result.email_status==="user received an email on payment"){
+            showPopup("Thanks for booking this trip, kindly check your email");
+        }
+        else {
 
-    } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-        alert('Booking failed. Please try again.');
-    }
+        }
+
+    //} catch (error) {
+    //    console.error('There was a problem with the fetch operation:', error);
+        showPopup('Booking failed. Please try again.');
+    //}
 }
 
 // Event listener for the booking button
